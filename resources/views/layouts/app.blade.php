@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @php(do_action('get_header'))
     @php(wp_head())
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
 
   <body @php(body_class())>
     @php(wp_body_open())
 
-    <div id="app">
+    <div id="app" class="bg-white dark:bg-gray-900"><!-- wrapper -->
+      
       <a class="sr-only focus:not-sr-only" href="#main">
         {{ __('Skip to content') }}
       </a>
@@ -34,3 +36,13 @@
     @php(wp_footer())
   </body>
 </html>
+<style>
+	html {
+		font-family: Urbanist, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+	}
+</style>
