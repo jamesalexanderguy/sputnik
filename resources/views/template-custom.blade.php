@@ -10,6 +10,7 @@
     @include('partials.banner')
     @include('partials.cta')
     @include('partials.testimonials')
+    @include('partials.blog')
     @include('partials.content-page')
     @include('partials.contenttest')
   @endwhile

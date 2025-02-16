@@ -1,10 +1,5 @@
----
-import Container from "./Container.astro"
-
----
-
 <div id="blog">
-  <Container>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
       <div class="mb-12 space-y-2 text-center">
         <h2 class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">Latest Articles</h2>
         <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
@@ -68,5 +63,5 @@ import Container from "./Container.astro"
           
         </div>
       </div>
-  </Container>
+  </div>
 </div>
