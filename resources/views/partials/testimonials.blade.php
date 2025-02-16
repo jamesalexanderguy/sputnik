@@ -1,10 +1,5 @@
----
-import Container from "./Container.astro"
-
----
-
 <div class="text-gray-600 dark:text-gray-300" id="testimonials">
-  <Container>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
     <div class="mb-20 space-y-4 px-6 md:px-0">
       <h2 class="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
         We have some fans.
@@ -73,5 +68,5 @@ import Container from "./Container.astro"
       </div>
 
     </div>
-  </Container>
+</div>
 </div>
