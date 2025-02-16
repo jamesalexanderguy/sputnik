@@ -11,6 +11,8 @@
     @include('partials.cta')
     @include('partials.testimonials')
     @include('partials.blog')
+    @include('partials.features')
+    @include('partials.stats')
     @include('partials.content-page')
     @include('partials.contenttest')
   @endwhile
