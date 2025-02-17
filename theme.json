@@ -31,17 +31,17 @@
           "slug": "transparent"
         },
         {
-          "color": "#9333ea",
+          "color": "#851b1e",
           "name": "Primary",
           "slug": "primary"
         },
         {
-          "color": "#ff7e33",
+          "color": "#c9dfe6",
           "name": "Secondary",
           "slug": "secondary"
         },
         {
-          "color": "#0c63e7",
+          "color": "#e3bfb0",
           "name": "Info",
           "slug": "info"
         },

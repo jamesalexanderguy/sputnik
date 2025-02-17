@@ -1,7 +1,7 @@
-<header class="banner">
-  <a class="brand" href="{{ home_url('/') }}">
+<header class="banner z-10 sticky top-0">
+  <!--<a class="brand" href="{{ home_url('/') }}">
     {!! $siteName !!}
-  </a>
+  </a>-->
 
   @if (has_nav_menu('primary_navigation'))
     <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
@@ -10,17 +10,20 @@
   @endif
 
 
-<nav class="z-10 w-full absolute">
+<nav class="w-full">
         <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
             <div class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative">
-                <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" class="hidden peer">
                 <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0">
                     <a href="#home" aria-label="logo" class="flex space-x-2 items-center">
-                        <div aria-hidden="true" class="flex space-x-1">
-                            <div class="h-4 w-4 rounded-full bg-gray-900 dark:bg-white"></div>
-                            <div class="h-6 w-2 bg-primary"></div>
+                      <div aria-hidden="true" class="flex space-x-1">
+                        <div class="lg:w-1/4 xl:w-1/5 pr-6 lg:pr-8">
+                          <div class="flex items-center">
+                            <a class="block lg:mr-4" href="/">
+                              <img class="max-w-sm w-auto h-10" src="/wp-content/themes/sputnik/resources/images/SpaceRace-Logo-2025-colour.svg" alt="SpaceRace Logo">
+                            </a>
+                          </div>
                         </div>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Astrolus</span>
+                      </div>
                     </a>
                     
                     <div class="relative flex items-center lg:hidden max-h-10">
@@ -30,8 +33,7 @@
                         </label>
                     </div>
                 </div>
-                <div aria-hidden="true" class="fixed z-10 inset-0 h-screen w-screen bg-white/70 backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden dark:bg-gray-900/70"></div>
-                <div class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1  absolute top-full left-0 transition-all duration-300 scale-95 origin-top 
+                <div class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1  absolute top-full left-0 transition-all duration-300 scale-95 origin-top 
                             lg:relative lg:scale-100 lg:peer-checked:translate-y-0 lg:translate-y-0 lg:flex lg:flex-row lg:items-center lg:gap-0 lg:p-0 lg:bg-transparent lg:w-7/12 lg:visible lg:opacity-100 lg:border-none
                             peer-checked:scale-100 peer-checked:opacity-100 peer-checked:visible lg:shadow-none 
                             dark:shadow-none dark:bg-gray-800 dark:border-gray-700">
