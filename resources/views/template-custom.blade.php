@@ -8,12 +8,7 @@
   @while(have_posts()) @php(the_post())
     @include('partials.page-header')
     @include('partials.banner')
+    @include('partials.recommendations')
     @include('partials.features')
-    @include('partials.cta')
-    @include('partials.testimonials')
-    @include('partials.blog')
-    @include('partials.stats')
-    @include('partials.content-page')
-    @include('partials.contenttest')
   @endwhile
 @endsection
