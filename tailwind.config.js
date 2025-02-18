@@ -15,6 +15,7 @@ const config = {
       transparent: colors.transparent,
       primary: "#851b1e",
       secondary: "#c9dfe6",
+      tertiary: "#e3bfb0",
       info: "#e3bfb0",
       black: colors.black,
       white: colors.white,
