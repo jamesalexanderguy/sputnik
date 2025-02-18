@@ -34,7 +34,7 @@ export default async (app) => {
    */
   app
     .setUrl('http://localhost:3000')
-    .setProxyUrl('http://cleanstart.test')
+    .setProxyUrl('http://vostok.test')
     .watch(['resources/views', 'app']);
 
   /**
