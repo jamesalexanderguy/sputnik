@@ -2,7 +2,8 @@
   <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
     <div class="mb-20 space-y-4 px-6 md:px-0">
       <h2 class="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-        We have some fans.
+      Don’t take our word for it, take theirs.
+
       </h2>
     </div>
     <div class="md:columns-2 lg:columns-3 gap-8 space-y-8">

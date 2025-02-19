@@ -10,19 +10,11 @@
     @include('partials.banner')
     @include('partials.recommendations')
     @include('partials.features')
-    
-    @include('partials.appblock')
-    
 
-    @include('partials.cta')
-    @include('partials.testimonials')
-    
+    {{-- # @include('partials.cta')
+    @include('partials.testimonials') --}}
 
     @include('partials.contact')
-    @include ('partials.faqs')
     
-    
-
-
   @endwhile
 @endsection
