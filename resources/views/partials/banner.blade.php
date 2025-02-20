@@ -4,29 +4,11 @@
         <div class="blur-[106px] h-32 bg-gradient-to-r from-sky-100 to-secondary dark:to-indigo-600"></div>
     </div>
     <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
-        <div class="relative pt-36 ml-auto">
+        <div class="relative py-36 ml-auto">
             <div class="lg:w-2/3 text-center mx-auto">
-            <h1 class="dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl"><span class="text-primary dark:text-white">Light up</span> your corner of the galaxy.</h1>
-            <!--<p class="mt-8 text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum. Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!</p>-->
-                <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
-                    <a
-                      href="#"
-                      class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
-                    >
-                      <span class="relative text-base font-semibold text-white"
-                        >Make Contact</span
-                      >
-                    </a>
-                    <a
-                      href="#contact"
-                      class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
-                    >
-                      <span
-                        class="relative text-base font-semibold text-primary dark:text-white"
-                        >Learn more</span
-                      >
-                    </a>
-                </div>
+            <h1 class="font-bold text-5xl md:text-6xl xl:text-7xl"><span class="text-primary dark:text-white">Light up</span> your corner of the galaxy</h1>
+            <h2 class="text-3xl mt-8 text-gray-700">Websites and campaigns to get your message home.</h2>
+                
                 
         </div>
 </div>
