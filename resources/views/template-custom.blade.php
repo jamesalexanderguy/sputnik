@@ -9,7 +9,10 @@
   @include('partials.page-header')
     @include('partials.banner')
     @include('partials.recommendations')
+    @include('partials.websites')
     @include('partials.features')
+    
+    @include('partials.portfolio')
 
     {{-- # @include('partials.cta')
     @include('partials.testimonials') --}}
