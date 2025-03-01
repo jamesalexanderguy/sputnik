@@ -45,21 +45,21 @@
                                     <span>Features</span>
                                 </a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="#solution" class="block md:px-4 transition hover:text-primary">
                                     <span>Process</span>
                                 </a>
-                            </li>
+                            </li>-->
                             <li>
-                                <a href="#testimonials" class="block md:px-4 transition hover:text-primary">
+                                <a href="#portfolio" class="block md:px-4 transition hover:text-primary">
                                     <span>Portfolio</span>
                                 </a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="#blog" class="block md:px-4 transition hover:text-primary">
                                     <span>FAQ</span>
                                 </a>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
 

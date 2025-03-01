@@ -1,4 +1,4 @@
-<div id="features">
+<div id="portfolio" class="pb-8 overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
     <div class="mx-auto md:w-2/3 lg:w-1/2">
       <h2 class="my-8 text-4xl font-bold text-gray-700 text-center md:text-5xl">
