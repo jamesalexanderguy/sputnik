@@ -5,7 +5,7 @@
         <div class="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">
           <h2 class="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">We build <span class="text-primary">beautiful websites,</span> usually in WordPress.</h2>
           <h4 class="text-center text-xl text-gray-600 dark:text-gray-300">
-          Whether you’re selling a product or a philosophy, we specialize in bringing your ideas to life, with  unique and visually-appealing custom web applications that ooze your brand ethos and inspire your audience to action.
+          Whether you’re selling a product or a philosophy, we specialize in bringing your ideas to life with unique and visually-appealing custom web applications that ooze your brand ethos and inspire your audience to action.
 </h4>
           
         </div>
