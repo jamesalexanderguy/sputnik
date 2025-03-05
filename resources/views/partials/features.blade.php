@@ -11,17 +11,20 @@
     <div class="mt-16 grid text-gray-600 grid-cols-12 gap-6">
       <!--block ONE-->
       <div class="rounded-2xl group relative bg-[#ecf3f5] hover:bg-[#e4eff1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 col-span-7 flex">
-        <div class="max-w-[210px] gap-4 2xl:mx-10 relative space-y-8 py-12 p-8 col-span-7 min-h-[382px]">
-          <img
-            src="/wp-content/themes/sputnik/resources/images/Custom-Code-icon-1.svg"
-            class="w-12"
-            alt="wordpress development kootenays" />
-
-          <div class="space-y-2">
+        <div class=" max-w-[210px] gap-4 2xl:mx-10 relative space-y-8 py-12 p-8 col-span-7 min-h-[382px]">
+          <div class="inline-flex">
+            <img
+              src="/wp-content/themes/sputnik/resources/images/Custom-Code-icon-1.svg"
+              class="w-12 pr-3"
+              alt="wordpress development kootenays" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
               WordPress Development
             </h5>
+          </div>
+
+          <div class="space-y-2">
+            
             <p class="text-gray-600 dark:text-gray-300">
               Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
             </p>
@@ -52,18 +55,20 @@
 
       <div class="flex rounded-2xl group relative bg-[#e7e8e9] hover:bg-[#dfe0e1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 col-span-5 overflow-hidden">
         <div class="w-2/3 rounded-2xl h-100 relative space-y-8 py-12 p-8 transition duration-500">
-          <img
-            src="/wp-content/themes/sputnik/resources/images/ecommerce-icon-1.svg"
-            class="w-12"
-            width="512"
-            height="512"
-            alt="ecommerce services" />
-
-          <div class="space-y-2">
+          <div class="inline-flex">
+            <img
+              src="/wp-content/themes/sputnik/resources/images/ecommerce-icon-1.svg"
+              class="w-12 pr-3"
+              width="512"
+              height="512"
+              alt="ecommerce services" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
               Ecommerce
             </h5>
+          </div>
+          <div class="space-y-2">
+            
             <p class="text-gray-600">
               Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
             </p>
@@ -86,18 +91,20 @@
       <!--additional blocks-->
       <div class="flex flex-col overflow-hidden rounded-2xl group relative transition bg-[#e7e8e9] hover:bg-[#dfe0e1] hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 col-span-6">
         <div class="relative space-y-8 py-12 p-8">
-          <img
-            src="/wp-content/themes/sputnik/resources/images/analytics-icon-1.svg"
-            class="w-12"
-            width="512"
-            height="512"
-            alt="Kootenay Ad Campaign Management" />
-
-          <div class="space-y-2">
+          <div class="inline-flex">
+            <img
+              src="/wp-content/themes/sputnik/resources/images/analytics-icon-1.svg"
+              class="w-12 pr-3"
+              width="512"
+              height="512"
+              alt="Kootenay Ad Campaign Management" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
               Ad campaign management
             </h5>
+          </div>
+          <div class="space-y-2">
+            
             <p class="text-gray-600 dark:text-gray-300">
               Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
             </p>
@@ -125,18 +132,20 @@
 
       <div class="trigger overflow-hidden flex col-span-6 rounded-2xl group relative bg-[#f7ece7] hover:bg-[#f4e5df] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
         <div class="w-2/3 relative space-y-8 py-12 p-8 w-1/2">
-          <img
-            src="/wp-content/themes/sputnik/resources/images/cybersecurity.svg"
-            class="w-12"
-            width="512"
-            height="512"
-            alt="Maintenance and security" />
-
-          <div class="space-y-2">
+          <div class="inline-flex">
+            <img
+              src="/wp-content/themes/sputnik/resources/images/cybersecurity.svg"
+              class="w-12 pr-3"
+              width="512"
+              height="512"
+              alt="Maintenance and security" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
               Maintenance and security
             </h5>
+          </div>
+          <div class="space-y-2">
+            
             <p class="text-gray-600">
               Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
             </p>
@@ -150,41 +159,29 @@
         </div>
         <style>
           .invaders {
-            top: -18em;
+            top: -12em;
+            right: 1em;
           }
 
           .trigger:hover .invaders {
-            animation: attack 18s steps(45) forwards infinite;
+            animation: attack 12s steps(30) forwards infinite;
           } 
 
 @keyframes  attack {
   0% {
-    top: -18em;
-    right: -2em;
+    top: -12em;
   }
-  41.7% {
-    top: -3em;
-    right: -2em;
-  }
-  50.4% {
-    top: -3em;
-    right: 1em;
-  }
-  58.74% {
-    top: -3em;
-    right: -2em;
+  50% {
+    top: -4em;
   }
   100% {
-    top: -18em;
-    right: 0;
+    top: -12em;
   }
 }
         </style>
 
         <div class="flex relative w-1/2">
           <div class="invaders absolute w-96 z-30">
-            <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
-            <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
             <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
             <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
             <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
@@ -208,13 +205,18 @@
       <!--three blocks-->
       <div class="overflow-hidden flex flex-col col-span-4 rounded-2xl group relative bg-[#f7ece7] hover:bg-[#f4e5df] hover:shadow-2xl hover:shadow-gray-600/10">
         <div class="relative rounded-2xl space-y-8 py-12 p-8 transition duration-500">
-          <img
-            src="/wp-content/themes/sputnik/resources/images/Responsive-icon-1.svg"
-            class="w-12"
-            width="512"
-            height="512"
-            alt="Branding and Design" />
-
+          <div class="inline-flex">
+            <img
+              src="/wp-content/themes/sputnik/resources/images/Responsive-icon-1.svg"
+              class="w-12 pr-3"
+              width="512"
+              height="512"
+              alt="Branding and Design" />
+            <h5
+              class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
+              Branding and design
+            </h5>
+          </div>
           <div class="space-y-2">
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
@@ -242,10 +244,16 @@
 
       <div class="overflow-hidden rounded-2xl group relative bg-[#e7e8e9] hover:bg-[#dfe0e1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 col-span-4">
         <div class="relative space-y-8 pt-12 pb-8 px-8">
-          <img
-            src="/wp-content/themes/sputnik/resources/images/Hosting-icon-1.svg"
-            class="w-12"
-            alt="hosting" />
+          <div class="inline-flex">
+            <img
+              src="/wp-content/themes/sputnik/resources/images/Hosting-icon-1.svg"
+              class="w-12 pr-3"
+              alt="hosting" />
+            <h5
+              class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
+              Hosting
+            </h5>
+          </div> 
 
           <div class="space-y-2">
             <h5
@@ -280,12 +288,19 @@
 
       <div class="col-span-4 rounded-2xl group relative bg-[#ecf3f5] hover:bg-[#e4eff1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
         <div class="relative space-y-8 py-12 p-8 ">
-          <img
-            src="/wp-content/themes/sputnik/resources/images/more-features.svg"
-            class="w-12"
-            width="512"
-            height="512"
-            alt="More features" />
+          <div class="inline-flex">
+            <img
+              src="/wp-content/themes/sputnik/resources/images/more-features.svg"
+              class="w-12 pr-3"
+              width="512"
+              height="512"
+              alt="More features" />
+            <h5
+              class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
+              Even more features
+            </h5>
+            
+          </div>
 
           <div class="space-y-2">
             <h5

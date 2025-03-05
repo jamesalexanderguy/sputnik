@@ -1,4 +1,4 @@
-<header class="banner z-10 sticky top-0">
+<header id="header" class="banner z-30 sticky top-0 transition duration-300 ease-in-out">
   <!--<a class="brand" href="{{ home_url('/') }}">
     {!! $siteName !!}
   </a>-->

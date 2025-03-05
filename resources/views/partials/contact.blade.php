@@ -1,4 +1,4 @@
-<div id="contact" class="relative py-16">
+<div id="get-started" class="overflow-hidden relative py-16">
     <div aria-hidden="true" class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
       <div class="blur-[106px] h-56 bg-gradient-to-br from-sky-100 to-secondary dark:from-blue-700"></div>
       <div class="blur-[106px] h-32 bg-gradient-to-r from-sky-100 to-secondary dark:to-indigo-600"></div>

@@ -5,6 +5,102 @@ import domReady from '@roots/sage/client/dom-ready';
  */
 domReady(async () => {
   // ...
+  var siteHead = document.getElementById('header');
+  var websites = document.getElementById('bannerline');
+  var movWebsites = websites.offsetTop;
+  var features = document.getElementById('websites');
+  var movFeatures = features.offsetTop;
+  var portfolio = document.getElementById('portfolio');
+  var movPortfolio = portfolio.offsetTop;
+  var getStarted = document.getElementById('get-started');
+  var movGetStarted = getStarted.offsetTop;
+
+  var resWebsites = movWebsites - document.documentElement.scrollTop;
+  var resFeatures = movFeatures - document.documentElement.scrollTop;
+  var resPortfolio = movPortfolio - document.documentElement.scrollTop;
+  var resGetStarted = movGetStarted - document.documentElement.scrollTop;
+  
+  if (resWebsites <= 0) {
+    siteHead.classList.remove('bg-secondary');
+    siteHead.classList.add('bg-white');
+  } 
+  if (resFeatures <= 0) {
+    siteHead.classList.remove('bg-white');
+    siteHead.classList.add('bg-secondary');
+  }
+  if (resPortfolio <= 0) {
+    siteHead.classList.remove('bg-secondary');
+    siteHead.classList.add('bg-white');
+  } 
+  if (resGetStarted <= 0) {
+    siteHead.classList.remove('bg-white');
+    siteHead.classList.add('bg-secondary');
+  }
+  
+window.onscroll = function(e) {
+
+  var siteHead = document.getElementById('header');
+  var websites = document.getElementById('bannerline');
+  var movWebsites = websites.offsetTop;
+  var features = document.getElementById('websites');
+  var movFeatures = features.offsetTop;
+  var portfolio = document.getElementById('portfolio');
+  var movPortfolio = portfolio.offsetTop;
+  var getStarted = document.getElementById('get-started');
+  var movGetStarted = getStarted.offsetTop;
+
+  var resWebsites = movWebsites - document.documentElement.scrollTop;
+  var resFeatures = movFeatures - document.documentElement.scrollTop;
+  var resPortfolio = movPortfolio - document.documentElement.scrollTop;
+  var resGetStarted = movGetStarted - document.documentElement.scrollTop;
+
+  // on load
+
+  // on scroll
+  if(this.oldScroll < this.scrollY){
+    
+    // scrolling down
+    if (resWebsites <= 0) {
+      siteHead.classList.remove('bg-secondary');
+      siteHead.classList.add('bg-white');
+    } 
+    if (resFeatures <= 0) {
+      siteHead.classList.remove('bg-white');
+      siteHead.classList.add('bg-secondary');
+    }
+    if (resPortfolio <= 0) {
+      siteHead.classList.remove('bg-secondary');
+      siteHead.classList.add('bg-white');
+    } 
+    if (resGetStarted <= 0) {
+      siteHead.classList.remove('bg-white');
+      siteHead.classList.add('bg-secondary');
+    }
+  }
+  else if (this.oldScroll > this.scrollY){
+
+    // scrolling up
+    if (resGetStarted > 0) {
+      siteHead.classList.remove('bg-secondary');
+      siteHead.classList.add('bg-white');
+    }
+    if (resPortfolio > 0) {
+      siteHead.classList.remove('bg-white');
+      siteHead.classList.add('bg-secondary');
+    } 
+    if (resFeatures > 0) {
+      siteHead.classList.remove('bg-secondary');
+      siteHead.classList.add('bg-white');
+    } 
+    if (resWebsites > 0) {
+      siteHead.classList.remove('bg-secondary');
+      siteHead.classList.remove('bg-white');
+    }
+  }
+  
+  this.oldScroll = this.scrollY;
+}
+
 });
 
 /**
