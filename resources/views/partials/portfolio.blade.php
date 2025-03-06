@@ -1,4 +1,4 @@
-<div id="portfolio" class="pb-8 overflow-hidden">
+<div id="portfolio" class="pb-8 pt-4 overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
     <div class="mx-auto md:w-2/3 lg:w-1/2">
       <h2 class="my-8 text-4xl font-bold text-gray-700 text-center md:text-5xl">
@@ -8,21 +8,16 @@
       .superscroll {
         top: 1.75rem;
         
-        animation: superscroll 10s steps(1500) forwards infinite;
+        animation: superscroll 12s steps(1500) forwards infinite;
+        animation-play-state: paused;
+      }
+
+      .roll .superscroll {
         animation-play-state: running;
-      }
-
-      .scrollwrap {
-        overflow-y: hidden;
-      }
+      } 
 
 
-      .scrollwrap:hover {
-        overflow-y: scroll;
-      }
-
-
-      .superscroll:hover {
+      .roll .superscroll:hover {
         
         animation-play-state: paused;
       }
@@ -32,8 +27,20 @@
           top: 1.75rem;
         }
 
-        100% {
+        12% {
+          top: 1.75rem;
+        }
+
+        94% {
           top: -300%;
+        }
+
+        96% {
+          top: 1.75rem;
+        }
+
+        100% {
+          top: 1.75rem;
         }
       }
     </style>
@@ -47,7 +54,7 @@
         </div>
 
         <!--block two-->
-        <div class="relative pt-[20em] overflow-hidden border border-gray-200 order-1 flex flex-col items-start rounded-lg bg-secondary md:order-3 md:col-span-2 lg:order-2 lg:col-span-1">
+        <div class="minibrowser relative pt-[20em] overflow-hidden border border-gray-200 order-1 flex flex-col items-start rounded-lg bg-secondary md:order-3 md:col-span-2 lg:order-2 lg:col-span-1">
           <div class="w-full z-10 absolute top-0 shadow-xl rounded-lg" style="transform-origin: right center;">
             <div class="flex items-center pl-3 space-x-1 bg-gray-200 rounded-t-lg h-7">
               <span class="w-2 h-2 bg-white rounded-full"></span>
@@ -55,9 +62,9 @@
               <span class="w-2 h-2 bg-white rounded-full"></span>
             </div>
           </div>
-          <div class="scrollwrap w-full top-0 absolute h-full">
+          
             <img class="superscroll w-full absolute top-0" alt="Osprey Community Foundation" loading="lazy" src="/wp-content/themes/sputnik/resources/images/screencapture-ospreycommunityfoundation-ca-2025-02-20-07_05_59-min.jpg">
-          </div>
+          
         </div>
         <!--block three-->
         <div class="group order-2 flex grow-1 h-full flex-col rounded-lg bg-[#cd6557] px-6 py-8 text-white lg:order-3">
@@ -88,7 +95,7 @@
         </div>
 
         <!--block two-->
-        <div class="relative pt-[20em] overflow-hidden border border-gray-200 order-1 flex flex-col items-start rounded-lg bg-secondary md:order-3 md:col-span-2 lg:order-2 lg:col-span-1">
+        <div class="minibrowser relative pt-[20em] overflow-hidden border border-gray-200 order-1 flex flex-col items-start rounded-lg bg-secondary md:order-3 md:col-span-2 lg:order-2 lg:col-span-1">
           <div class="w-full z-10 absolute top-0 shadow-xl rounded-lg" style="transform-origin: right center;">
             <div class="flex items-center pl-3 space-x-1 bg-gray-200 rounded-t-lg h-7">
               <span class="w-2 h-2 bg-white rounded-full"></span>
@@ -96,9 +103,9 @@
               <span class="w-2 h-2 bg-white rounded-full"></span>
             </div>
           </div>
-          <div class="scrollwrap w-full top-0 absolute h-full">
-            <img class="superscroll w-full absolute top-0" alt="Selkirk Snowcat Skiing" loading="lazy" src="/wp-content/themes/sputnik/resources/images/screencapture-selkirksnowcatskiing-why-selkirk-2025-02-19-18_39_46-min.jpg">
-          </div>
+          
+          <img class="superscroll w-full absolute top-0" alt="Selkirk Snowcat Skiing" loading="lazy" src="/wp-content/themes/sputnik/resources/images/screencapture-selkirksnowcatskiing-why-selkirk-2025-02-19-18_39_46-min.jpg">
+          
         </div>
         
         <!--block three-->

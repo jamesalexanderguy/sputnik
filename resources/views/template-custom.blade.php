@@ -8,7 +8,6 @@
   @while(have_posts()) @php(the_post())
   @include('partials.page-header')
     @include('partials.banner')
-    @include('partials.recommendations')
     @include('partials.websites')
     @include('partials.features')
     

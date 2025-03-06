@@ -4,7 +4,32 @@ import domReady from '@roots/sage/client/dom-ready';
  * Application entrypoint
  */
 domReady(async () => {
+
+
   // ...
+
+
+  [...document.getElementsByClassName('minibrowser')].forEach(el => {
+
+  const observer = new window.IntersectionObserver(   
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("roll");
+        return;
+      }
+      entry.target.classList.remove("roll");
+    },
+    {
+      root: null,
+      threshold: 0.0 // 0.0 - 1.0   
+    } );
+
+    observer.observe(el);
+
+  })
+
+
+
   var siteHead = document.getElementById('header');
   var websites = document.getElementById('bannerline');
   var movWebsites = websites.offsetTop;
@@ -19,7 +44,7 @@ domReady(async () => {
   var resFeatures = movFeatures - document.documentElement.scrollTop;
   var resPortfolio = movPortfolio - document.documentElement.scrollTop;
   var resGetStarted = movGetStarted - document.documentElement.scrollTop;
-  
+
   if (resWebsites <= 0) {
     siteHead.classList.remove('bg-secondary');
     siteHead.classList.add('bg-white');
@@ -34,7 +59,7 @@ domReady(async () => {
   } 
   if (resGetStarted <= 0) {
     siteHead.classList.remove('bg-white');
-    siteHead.classList.add('bg-secondary');
+    siteHead.classList.remove('bg-secondary');
   }
   
 window.onscroll = function(e) {
@@ -74,7 +99,7 @@ window.onscroll = function(e) {
     } 
     if (resGetStarted <= 0) {
       siteHead.classList.remove('bg-white');
-      siteHead.classList.add('bg-secondary');
+      siteHead.classList.remove('bg-secondary');
     }
   }
   else if (this.oldScroll > this.scrollY){

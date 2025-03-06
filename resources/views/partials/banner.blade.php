@@ -9,6 +9,8 @@
             <h1 id="bannerline" class="font-bold text-5xl md:text-6xl xl:text-7xl leading-[1.1] xl:leading-[1.1] md:leading-[1.1]"><span class="text-primary dark:text-white">Light up</span> your corner of the galaxy</h1>
             <h2 class="text-3xl mt-8 text-gray-700">Websites and campaigns to get your message home.</h2>
         </div>
-</div>
+    </div>
+    @include('partials.recommendations')
+
 </div>
 

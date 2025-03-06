@@ -1,4 +1,4 @@
-<div id="features" class="pb-8 overflow-hidden bg-secondary">
+<div id="features" class="pb-8 pt-4 overflow-hidden bg-secondary">
   <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
     <div class="mx-auto md:w-2/3 lg:w-1/2">
       <h2 class="my-8 text-4xl font-bold text-gray-700 text-center md:text-5xl">
@@ -81,7 +81,7 @@
           </a>
         </div>
         <div class="flex items-center relative w-1/3">
-          <img src="/wp-content/themes/sputnik/resources/images/ecommerce-website-solutions.jpg"
+          <img src="/wp-content/themes/sputnik/resources/images/features-payment.png"
               class="w-[200px] max-w-[200px] rounded-sm transform scale-[1.7] group-hover:scale-[1.8] -right-32 top-30 group-hover:-translate-x-3 absolute shadow-xl transition delay-150 duration-500 ease-in-out "
               alt="Ecommerce payment gateways" />
           </div>
