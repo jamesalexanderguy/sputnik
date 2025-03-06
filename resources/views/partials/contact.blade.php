@@ -8,7 +8,7 @@
       <div class="relative">
 
         <div class="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">
-          <h1 class="text-left text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">Let's explore your <span class="text-primary">ideas</span></h1>
+          <h1 class="text-left text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">Let's <span class="text-primary">explore</span> your ideas</h1>
           <p class="text-left text-xl text-gray-600 dark:text-gray-300">
             Book a chat today and we'll help you figure out what you need.
           </p>

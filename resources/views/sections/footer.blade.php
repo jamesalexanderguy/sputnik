@@ -1,10 +1,23 @@
-<footer class="pt-20 pb-10 md:pt-30 md:pt-20 bg-primary">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+<footer class="pt-20 pb-10 md:pt-30 md:pt-20 bg-primary columns-5">
+    <div class="col-span-4 max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
       <div class="copyright">
         <p class="text-secondary">
           <svg class="w-5 inline svg-inline--fa fa-copyright fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="copyright" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
             <path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532 0-200-89.451-200-200 0-110.531 89.451-200 200-200 110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43 0-140.484-61.425-140.484-141.567 0-79.152 60.275-139.401 139.762-139.401 55.531 0 88.738 26.62 97.593 34.779a11.965 11.965 0 0 1 1.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303 0-77.916 35.33-77.916 80.082 0 41.589 26.888 83.692 78.277 83.692 32.657 0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947 0 0 1-1.152 15.518z"></path>
           </svg><!-- <i class="far fa-copyright"></i> Font Awesome fontawesome.com --> SpaceRace Digital Inc. All Rights Reserved</p>
       </div>
+  </div>
+  <div class="bg-white col-span-1">
+    <a href="/" aria-label="logo" class="flex space-x-2 items-center">
+      <div aria-hidden="true" class="flex space-x-1">
+        <div class="lg:w-1/4 xl:w-1/5 pr-6 lg:pr-8">
+          <div class="flex items-center">
+            <a class="block lg:mr-4" href="/">
+              <img class="max-w-sm w-auto h-10" src="/wp-content/themes/sputnik/resources/images/SpaceRace-logo-2025-bw.svg" alt="SpaceRace Logo">
+            </a>
+          </div>
+        </div>
+      </div>
+    </a>
   </div>
 </footer>

@@ -16,7 +16,7 @@
             <img
               src="/wp-content/themes/sputnik/resources/images/Custom-Code-icon-1.svg"
               class="w-12 pr-3"
-              alt="wordpress development kootenays" />
+              alt="WordPress development Kootenays" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
               WordPress Development
@@ -70,7 +70,7 @@
           <div class="space-y-2">
             
             <p class="text-gray-600">
-              Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
+            Intuitive and easy-to-manage online stores that help you to showcase and sell your products on the internet.
             </p>
           </div>
           <a href="#" class="flex items-center justify-between group-hover:text-primary">
@@ -106,7 +106,7 @@
           <div class="space-y-2">
             
             <p class="text-gray-600 dark:text-gray-300">
-              Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
+            Struggling to get your ads seen by the right people? We specialize in creating and managing high-performing ad campaigns across Google, Facebook, Instagram, and more.
             </p>
           </div>
           <a href="#" class="flex items-center justify-between group-hover:text-primary">
@@ -147,7 +147,7 @@
           <div class="space-y-2">
             
             <p class="text-gray-600">
-              Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
+            Our WordPress maintenance and security services will keep your site running smoothly and protect it from hackers and malware.
             </p>
           </div>
           <a href="#" class="flex items-center justify-between group-hover:text-primary">
@@ -218,10 +218,6 @@
             </h5>
           </div>
           <div class="space-y-2">
-            <h5
-              class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
-              Branding and design
-            </h5>
             <p class="text-gray-600 dark:text-gray-300">
               Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
             </p>
@@ -256,13 +252,8 @@
           </div> 
 
           <div class="space-y-2">
-            <h5
-              class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
-              Hosting
-            </h5>
             <p class="text-gray-600 dark:text-gray-300">
-              Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
-            </p>
+            We provide managed website hosting packages, specially optimized for WordPress. Get the fastest performance, enhanced security, and the best in customer support.            </p>
           </div>
           <a href="#" class="flex items-center justify-between group-hover:text-primary">
             <span class="text-sm">Read more</span>
@@ -303,10 +294,6 @@
           </div>
 
           <div class="space-y-2">
-            <h5
-              class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
-              Even more features
-            </h5>
             <p class="text-gray-600">
               Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
             </p>

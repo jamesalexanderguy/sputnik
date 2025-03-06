@@ -27,7 +27,7 @@
                     </a>
                     
                     <div class="relative flex items-center lg:hidden max-h-10">
-                        <label role="button" for="toggle_nav" aria-label="humburger" id="hamburger" class="relative  p-6 -mr-6">
+                        <label role="button" for="toggle_nav" aria-label="hamburger" id="hamburger" class="relative  p-6 -mr-6">
                             <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300"></div>
                             <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300"></div>
                         </label>
