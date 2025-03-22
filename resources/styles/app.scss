@@ -2,6 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+// variables - put in separate file
+
+// media queries
+
+/* Smallest devices (landscape phones, 576px and up) */
+$phone-xxs: "only screen and (min-width: 330px)";
+
+$phone-400: "only screen and (min-width: 400px)";
+
+/* Small devices (landscape phones, 576px and up) */
+$phone-xs: "only screen and (min-width: 576px)";
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+$tablet-sm: "only screen and (min-width: 768px)";
+
+/* Large devices (desktops, 992px and up) */
+$desktop-md: "only screen and (min-width: 992px)";
+
+/* Large devices (desktops, 1024px and up) */
+$desktop-lg: "only screen and (min-width: 1024px)";
+
+/* Extra large devices (large desktops, 1200px and up) */
+$widescreen-lg: "only screen and (min-width: 1200px)";
+
+
+//Breakpoint prefix	Minimum width	CSS
+//$breakpoint-sm	40rem (640px)	@media (width >= 40rem) { ... }
+//md	48rem (768px)	@media (width >= 48rem) { ... }
+//lg	64rem (1024px)	@media (width >= 64rem) { ... }
+//xl	80rem (1280px)	@media (width >= 80rem) { ... }
+//2xl	96rem (1536px)	@media (width >= 96rem) { ... }
+
+
+#features,
+#portfolio,
+#get-started {
+  scroll-margin-top: 5rem;
+  overflow: initial !important;
+}
+
 .form-field {
   margin: 1em 0;
 
@@ -14,5 +54,44 @@
     width: 100%;
     padding: 1em;
     border-radius: 0.3rem;
+  }
+}
+// menu modal
+#hamburger.clicked {
+  #line {
+    transform: rotate(-45deg);
+    translate: 0 calc(.25rem*1.5);
+  }
+  #line2 {
+    transform: rotate(45deg);
+    translate: 0 calc(.25rem*-1);
+  }
+}
+
+#navLayer {
+  display: none;
+  opacity: 0;
+  transition: all 0.5s linear;
+  // translate
+
+  &.blurryFace {
+    opacity: 0.45;
+    display: flex;
+  }
+}
+
+#navMenu {
+  right: -100%;
+  transition: all 0.3s linear;
+
+  @media #{$desktop-lg} {
+    right: 0;
+  }
+
+  &.openSesame {
+    visibility: visible;
+    opacity: 1;
+    display: inline-flex;
+    right: 0;
   }
 }

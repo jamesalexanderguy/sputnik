@@ -15,7 +15,7 @@
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/Custom-Code-icon-1.svg"
-              class="w-12 pr-3"
+              class="flex self-start w-8 pr-3 pt-1"
               alt="WordPress development Kootenays" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
@@ -58,7 +58,7 @@
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/ecommerce-icon-1.svg"
-              class="w-12 pr-3"
+              class="flex self-start w-8 pr-3 pt-1"
               width="512"
               height="512"
               alt="ecommerce services" />
@@ -94,13 +94,11 @@
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/analytics-icon-1.svg"
-              class="w-12 pr-3"
-              width="512"
-              height="512"
+              class="flex self-start w-8 pr-3 pt-1"
               alt="Kootenay Ad Campaign Management" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
-              Ad campaign management
+              Ad Campaign Management
             </h5>
           </div>
           <div class="space-y-2">
@@ -135,13 +133,11 @@
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/cybersecurity.svg"
-              class="w-12 pr-3"
-              width="512"
-              height="512"
-              alt="Maintenance and security" />
+              class="flex self-start w-8 pr-3 pt-1"
+              alt="Security and Maintenance" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
-              Maintenance and security
+              Security and Maintenance
             </h5>
           </div>
           <div class="space-y-2">
@@ -208,13 +204,11 @@
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/Responsive-icon-1.svg"
-              class="w-12 pr-3"
-              width="512"
-              height="512"
+              class="flex self-start w-8 pr-3 pt-1"
               alt="Branding and Design" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
-              Branding and design
+              Design and Branding
             </h5>
           </div>
           <div class="space-y-2">
@@ -243,11 +237,11 @@
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/Hosting-icon-1.svg"
-              class="w-12 pr-3"
+              class="flex self-start w-8 pr-3 pt-1"
               alt="hosting" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">
-              Hosting
+              Hosting and Domains
             </h5>
           </div> 
 
@@ -282,9 +276,7 @@
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/more-features.svg"
-              class="w-12 pr-3"
-              width="512"
-              height="512"
+              class="flex self-start w-8 pr-3 pt-1"
               alt="More features" />
             <h5
               class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-primary">

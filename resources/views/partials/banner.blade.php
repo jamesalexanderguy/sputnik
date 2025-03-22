@@ -1,4 +1,4 @@
-<div class="relative" id="home">
+<div class="backdrop-blur-2xl relative" id="home">
     <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-60 dark:opacity-20">
         <div class="blur-[106px] h-56 bg-gradient-to-br from-sky-100 to-secondary dark:from-blue-700"></div>
         <div class="blur-[106px] h-32 bg-gradient-to-r from-sky-100 to-secondary dark:to-indigo-600"></div>
