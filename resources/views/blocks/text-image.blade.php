@@ -22,7 +22,7 @@
       <div class="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">
         <h2 class="text-left text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">{{ get_field('blockhead') }}</h2>
         <p class="text-left text-xl text-gray-600 dark:text-gray-300">
-        {{ get_field('blocktext') }}</p>
+        {{ the_field('blocktext') }}</p>
       </div>
     </div>
     <div class="group relative w-2/5">

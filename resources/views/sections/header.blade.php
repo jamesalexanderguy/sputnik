@@ -65,10 +65,10 @@
                     <div class="mt-12 lg:mt-0">
                         <a
                             href="#get-started"
-                            class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                            class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-md before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                             >
                             <span class="relative text-sm font-semibold text-white"
-                                >Make Contact</span
+                                >Contact</span
                             >
                         </a>
                     </div>
