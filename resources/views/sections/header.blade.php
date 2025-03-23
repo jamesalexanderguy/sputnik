@@ -20,7 +20,7 @@
                         <div class="lg:w-1/4 xl:w-1/5 pr-6 lg:pr-8">
                           <div class="flex items-center">
                             <a class="block lg:mr-4" href="/">
-                              <img class="max-w-sm w-auto h-10 mx-2" src="/wp-content/themes/sputnik/resources/images/SpaceRace-Logo-2025-colour.svg" alt="SpaceRace Logo">
+                              <img class="max-w-sm w-auto h-10 mx-2" src="/wp-content/themes/allset/resources/images/temp-logo.png" alt="Allset Logo">
                             </a>
                           </div>
                         </div>
