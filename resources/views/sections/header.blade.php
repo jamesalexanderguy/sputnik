@@ -11,7 +11,7 @@
 
   
 <div id="navLayer" class="bg-secondary inset-0 z-10 h-screen w-screen origin-bottom scale-y-100 transition duration-500 group-data-[state=active]:origin-top group-data-[state=active]:scale-y-100 lg:hidden fixed"></div>
-<nav id="shortHead" class="w-full z-10 relative">
+<nav id="shortHead" class="bg-white w-full z-10 relative">
         <div class="max-w-7xl mx-auto px-0 lg:px-12 xl:px-6">
             <div class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative">
                 <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0">
