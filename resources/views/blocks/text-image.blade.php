@@ -15,7 +15,7 @@
   EnqueueAssets: path/to/asset
 --}}
 
-<div class="relative py-16 bg-gradient-to-b from-transparent to-secondary {{ $block['classes'] }}">
+<div class="relative py-16 {{ $block['classes'] }}">
   <div class="flex max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
     <div class="relative w-3/5">
       
@@ -30,7 +30,7 @@
           <img
               src="{{ get_field('blockimage') }}"
               class=""
-              alt="invoice"
+              alt="All Set Packs"
             />
       </div>
     </div>

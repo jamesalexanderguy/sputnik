@@ -15,7 +15,7 @@
   EnqueueAssets: path/to/asset
 --}}
 
-<div id="{{ $block['id'] }}" class="overflow-hidden relative pb-16 pt-4 bg-gradient-to-b from-transparent to-secondary {{ $block['classes'] }}">
+<div id="{{ $block['id'] }}" class="overflow-hidden relative pb-16 pt-4 {{ $block['classes'] }}">
 
     <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
       <div class="relative">

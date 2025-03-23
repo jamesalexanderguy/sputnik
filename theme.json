@@ -31,19 +31,19 @@
           "slug": "transparent"
         },
         {
-          "color": "#9333ea",
+          "color": "#b44e4a",
           "name": "Primary",
           "slug": "primary"
         },
         {
-          "color": "#ff7e33",
+          "color": "#3e67a8",
           "name": "Secondary",
           "slug": "secondary"
         },
         {
-          "color": "#0c63e7",
-          "name": "Info",
-          "slug": "info"
+          "color": "#f3f4f4",
+          "name": "Tertiary",
+          "slug": "tertiary"
         },
         {
           "color": "#000",

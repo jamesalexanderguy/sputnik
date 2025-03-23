@@ -36,7 +36,7 @@
           
         </div>
         <!--block three-->
-        <div class="group order-2 flex grow-1 h-full flex-col rounded-lg bg-[#cd6557] px-6 py-8 text-white lg:order-3">
+        <div class="group order-2 flex grow-1 h-full flex-col rounded-lg bg-tertiary px-6 py-8 text-white lg:order-3">
           <h2 class="text-4xl font-bold mb-6">{{ get_field('gridhead') }}</h2>
           {{ get_field('gridtext') }}
           
