@@ -1284,7 +1284,7 @@
       "customFontSize": false,
       "fontFamilies": [
         {
-          "fontFamily": "ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+          "fontFamily": "ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\",\"Work Sans\"",
           "name": "Ui-sans-serif",
           "slug": "sans"
         },
@@ -1334,6 +1334,11 @@
           "name": "3xl",
           "size": "1.875rem",
           "slug": "3xl"
+        },
+        {
+          "name": "3fivexl",
+          "size": "2rem",
+          "slug": "3fivexl"
         },
         {
           "name": "4xl",

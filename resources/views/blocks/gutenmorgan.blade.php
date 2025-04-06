@@ -4,20 +4,18 @@
   Category: formatting
   Icon: admin-comments
   Keywords: testimonial quote
-  Mode: edit
+  Mode: preview
   Align: left
-  PostTypes: page post
-  SupportsAlign: left right
-  SupportsMode: false
-  SupportsMultiple: false
+
+  SupportsMultiple: true
   EnqueueStyle: styles/style.scss
   EnqueueScript: scripts/script.js
   EnqueueAssets: path/to/asset
 --}}
 
-<blockquote data-{{ $block['id'] }} class="{{ $block['classes'] }}">
+<blockquote id="elephant" data-{{ $block['id'] }} class="{{ $block['classes'] }}">
     <p>{{ get_field('testimonial') }}</p>
-    <cite>
+    <cite class="bg-primary">
       <span>{{ get_field('author') }}</span>
     </cite>
 </blockquote>

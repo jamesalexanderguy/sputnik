@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+
 // variables - put in separate file
 
 // media queries
@@ -41,6 +43,14 @@ $widescreen-lg: "only screen and (min-width: 1200px)";
   //scroll-margin-top: 5rem;
   //overflow: initial !important;
 //}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.wysiwyg p {
+  font-size: 1.25rem;
+}
 
 .form-field {
   margin: 1em 0;

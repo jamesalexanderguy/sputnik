@@ -20,7 +20,7 @@
                         <div class="lg:w-1/4 xl:w-1/5 pr-6 lg:pr-8">
                           <div class="flex items-center">
                             <a class="block lg:mr-4" href="/">
-                              <img class="max-w-sm w-auto h-10 mx-2" src="/wp-content/themes/allset/resources/images/temp-logo.png" alt="Allset Logo">
+                              <img class="max-w-sm w-auto h-10 mx-2" src="/wp-content/themes/allset/resources/images/allset-logo-colour-horizontal.svg" alt="Allset Logo">
                             </a>
                           </div>
                         </div>
@@ -40,23 +40,13 @@
                     <div class="text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0">
                         <ul class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0">
                             <li>
-                                <a href="#features" class="block md:px-4 transition hover:text-primary">
-                                    <span>Features</span>
+                                <a href="#packs" class="block md:px-4 transition hover:text-primary">
+                                    <span>Packs</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#solution" class="block md:px-4 transition hover:text-primary">
-                                    <span>Process</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#portfolio" class="block md:px-4 transition hover:text-primary">
-                                    <span>Portfolio</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#blog" class="block md:px-4 transition hover:text-primary">
-                                    <span>FAQ</span>
+                                <a href="#about" class="block md:px-4 transition hover:text-primary">
+                                    <span>About</span>
                                 </a>
                             </li>
                         </ul>
@@ -64,7 +54,7 @@
 
                     <div class="mt-12 lg:mt-0">
                         <a
-                            href="#get-started"
+                            href="#contact"
                             class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-md before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                             >
                             <span class="relative text-sm font-semibold text-white"
