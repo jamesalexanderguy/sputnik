@@ -31,12 +31,12 @@
           "slug": "transparent"
         },
         {
-          "color": "#b44e4a",
+          "color": "#c24545",
           "name": "Primary",
           "slug": "primary"
         },
         {
-          "color": "#3e67a8",
+          "color": "#005c99",
           "name": "Secondary",
           "slug": "secondary"
         },
@@ -44,6 +44,11 @@
           "color": "#f3f4f4",
           "name": "Tertiary",
           "slug": "tertiary"
+        },
+        {
+          "color": "#9ba9cc",
+          "name": "Dull",
+          "slug": "dull"
         },
         {
           "color": "#000",
