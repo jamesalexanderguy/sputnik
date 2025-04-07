@@ -16,14 +16,14 @@
   <div class="flex flex-col md:flex-row content-stretch max-w-5xl mx-auto px-6 md:px-12 xl:px-6">
     <div class="relative w-full md:w-1/2">
       
-      <div class="mt-6 m-auto space-y-6">
+      <div class="m-auto space-y-6">
         <h2 class="text-left text-3xl text-[#6d6e71] md:text-4xl">{{ the_field('blockheading') }}</h2>
         
         <div class="wysiwyg text-left text-1xl text-gray-800">{{ the_field('blocktext') }}</div>
       </div>
     </div>
-    <div class="relative w-full md:w-1/2">
-      <div class="md:mx-6 h-full flex flex-col justify-center space-y-6">
+    <div class="relative w-full mt-[1rem] md:w-1/2 md:mt-0">
+      <div class="md:mx-6 h-full flex flex-col space-y-6">
           <img
               src="{{ get_field('blockimage') }}"
               class="rounded-lg object-cover"

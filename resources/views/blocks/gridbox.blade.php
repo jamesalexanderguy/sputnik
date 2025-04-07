@@ -20,20 +20,19 @@
    <section class="container">
       <div class="grid gap-4 md:grid-cols-2 2xl:gap-6 content-stretch">
         <!--block one-->
-        <div class="flex order-3 overflow-hidden rounded-lg bg-tertiary md:order-1 lg:row-span-2">
+        <div class="flex order-3 overflow-hidden rounded-lg bg-tertiary md:order-1 md:row-span-2">
 
           <img class="object-cover" alt="Allset Evacuation Backpacks" loading="lazy" src="{{ get_field('gridimage') }}">
         </div>
 
         <!--block two-->
-        <div class="relative overflow-hidden border border-gray-200 order-1 flex flex-col items-start rounded-lg bg-secondary md:order-3 md:col-span-2 lg:order-2 lg:col-span-1">
+        <div class="relative overflow-hidden border border-gray-200 order-1 flex flex-col items-start rounded-lg bg-secondary md:order-2 lg:col-span-1">
           
-          
-            <img class="w-full" alt="Allset Evacuation Backpacks" loading="lazy" src="{{ get_field('gridimage2') }}">
+          <img class="h-full w-full object-cover aspect-[5/3.5]" alt="Allset Evacuation Backpacks" loading="lazy" src="{{ get_field('gridimage2') }}">
           
         </div>
         <!--block three-->
-        <div class="group order-2 flex grow-1 h-full flex-col rounded-lg bg-tertiary px-6 py-8 text-gray-800 lg:order-3">
+        <div class="group order-2 flex grow-1 h-full flex-col rounded-lg bg-tertiary px-6 py-8 text-gray-800 md:order-3">
           <h2 class="text-[#6d6e71] text-4xl mb-6">{{ the_field('gridhead') }}</h2>
           <div class="wysiwyg">{{ the_field('gridtext') }}</div>
           

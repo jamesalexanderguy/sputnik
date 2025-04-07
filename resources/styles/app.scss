@@ -37,12 +37,12 @@ $widescreen-lg: "only screen and (min-width: 1200px)";
 //2xl	96rem (1536px)	@media (width >= 96rem) { ... }
 
 
-//#features,
-//#portfolio,
-//#get-started {
-  //scroll-margin-top: 5rem;
-  //overflow: initial !important;
-//}
+#contact,
+#about,
+#packs {
+  scroll-margin-top: 5rem;
+  overflow: initial !important;
+}
 
 body {
   font-family: 'Work Sans', sans-serif;
@@ -67,6 +67,26 @@ body {
     border-radius: 0.3rem;
   }
 }
+// header
+.logo img {
+  height: 4.5rem;
+}
+
+#menu-primary {
+  li a {
+    display: block;
+    transition: all 0.3s linear;
+
+    @media #{$desktop-lg} {
+      margin: 0 1rem;
+    }
+
+    &:hover {
+      color: #c24545;
+    }
+  }
+}
+
 // menu modal
 #hamburger.clicked {
   #line {

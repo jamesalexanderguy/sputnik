@@ -11,6 +11,8 @@ domReady(async () => {
   var hamburger = document.getElementById('hamburger');
   var navLayer = document.getElementById('navLayer');
   var navMenu = document.getElementById('navMenu');
+  
+
 
   // hamburger on click toggle 
   hamburger.addEventListener('click', function() {
@@ -25,9 +27,9 @@ domReady(async () => {
   let interval = setInterval(() => {
       count++;
       if (count === 1) {
-        navLayer.classList.toggle('blurryFace');
-        navMenu.classList.toggle('openSesame');
-        hamburger.classList.toggle('clicked');
+        navLayer.classList.remove('blurryFace');
+        navMenu.classList.remove('openSesame');
+        hamburger.classList.remove('clicked');
           clearInterval(interval);
           
       }
