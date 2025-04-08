@@ -6,6 +6,7 @@
     @php(do_action('get_header'))
     @php(wp_head())
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>.wpcf7-response-output {margin-left: 0; margin-right: 0;}.grecaptcha-badge {visibility: hidden !important;position: relative;z-index: -1;}.wpcf7-spinner {position: absolute;}.contactButton {margin-top: 1rem;}</style>
   </head>
 
   <body @php(body_class())>
