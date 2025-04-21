@@ -37,9 +37,13 @@ $widescreen-lg: "only screen and (min-width: 1200px)";
 
 #features,
 #portfolio,
-#get-started {
-  scroll-margin-top: 5rem;
+#make-contact {
+  scroll-margin-top: 3.5rem;
   overflow: initial !important;
+}
+
+.superscroll {
+  top: 1.75rem;
 }
 
 .form-field {
@@ -55,6 +59,15 @@ $widescreen-lg: "only screen and (min-width: 1200px)";
     padding: 1em;
     border-radius: 0.3rem;
   }
+}
+
+.visit {
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+.wpcf7-spinner {
+  position: absolute;
 }
 // menu modal
 #hamburger.clicked {

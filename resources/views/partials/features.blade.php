@@ -9,9 +9,9 @@
 
 <!--GRID-->    
     <div class="mt-16 grid text-gray-600 grid-cols-12 gap-6">
-      <!--block ONE-->
-      <div class="rounded-2xl group relative bg-[#ecf3f5] hover:bg-[#e4eff1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 col-span-7 flex">
-        <div class=" max-w-[210px] gap-4 2xl:mx-10 relative space-y-8 py-12 p-8 col-span-7 min-h-[382px]">
+      <!--block ONE WordPress-->
+      <div class="col-span-12 md:col-span-7 overflow-hidden rounded-2xl group relative bg-[#ecf3f5] hover:bg-[#e4eff1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 flex flex-col lg:flex-row">
+        <div class="col-span-12 lg:col-span-7 lg:max-w-[350px] gap-4 relative block space-y-8 pb-4 lg:pb:12 py-12 p-8 lg:min-h-[382px]">
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/Custom-Code-icon-1.svg"
@@ -26,35 +26,31 @@
           <div class="space-y-2">
             
             <p class="text-gray-600 dark:text-gray-300">
-              Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
+            WordPress is versatile and scalable, with a shallow learning curve for site management, which is why it powers 45% of the world’s internet.</p><p>From Gutenberg blocks and custom plugins to site rescues and full theme development, let us tailor the right WordPress solution for your organization.
             </p>
           </div>
-          <a href="#" class="flex items-center justify-between group-hover:text-primary">
+          <!-- <a href="#" class="flex items-center justify-between group-hover:text-primary">
             <span class="text-sm">More about WordPress</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 -translate-x-4 text-2xl opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:opacity-100">
               <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd" />
             </svg>
-          </a>
+          </a> -->
         </div>
 
-        <div class="mx-6 h-full flex flex-col justify-center space-y-8 py-12 p-8">
+        <div class="h-full flex lg:flex-col lg:col-span-5 justify-center space-y-8 pt-4 lg:pt-12 py-12">
 
           <img
-            src="/wp-content/themes/sputnik/resources/images/invoice1-us.png"
-            class="transition absolute w-45 shadow-xl delay-150 duration-500 ease-in-out group-hover:-translate-y-5 group-hover:scale-120"
-            alt="invoice" />
+            src="/wp-content/themes/sputnik/resources/images/feature-images/features-wordpress.png"
+            class="w-[80%] max-w-[80%] max-w-[100%] transition static lg:absolute lg:w-96 lg:-bottom-2 shadow-xl delay-150 duration-500 ease-in-out transform group-hover:scale-110 group-hover:lg:scale-120"
+            alt="WordPress Development" />
 
-          <img
-            src="/wp-content/themes/sputnik/resources/images/invoice2.png"
-            class="absolute bottom-[40px] right-[0] w-45 shadow-xl transition delay-150 duration-500 ease-in-out group-hover:-translate-x-1/2 group-hover:scale-120"
-            alt="invoice 2" />
 
         </div>
 
       </div>
-
-      <div class="flex rounded-2xl group relative bg-[#e7e8e9] hover:bg-[#dfe0e1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 col-span-5 overflow-hidden">
-        <div class="w-2/3 rounded-2xl h-100 relative space-y-8 py-12 p-8 transition duration-500">
+        <!-- block two: ecommerce -->
+      <div class="col-span-12 sm:col-span-6 md:col-span-5 block lg:flex rounded-2xl group relative bg-[#f0f0f0] hover:bg-[#dfe0e1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 overflow-hidden">
+        <div class="block w-full lg:w-[60%] rounded-2xl relative space-y-8 py-12 p-8 transition duration-500">
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/ecommerce-icon-1.svg"
@@ -68,28 +64,26 @@
             </h5>
           </div>
           <div class="space-y-2">
-            
             <p class="text-gray-600">
-            Intuitive and easy-to-manage online stores that help you to showcase and sell your products on the internet.
-            </p>
+            Intuitive and easy-to-manage online stores that integrate seamlessly with your website for a smooth user experience.</p>
+            <p>Clean, simple ecommerce themes to showcase your products and convert your customers.</p>
           </div>
-          <a href="#" class="flex items-center justify-between group-hover:text-primary">
+          <!-- <a href="#" class="flex items-center justify-between group-hover:text-primary">
             <span class="text-sm">Read more</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 -translate-x-4 text-2xl opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:opacity-100">
               <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd" />
             </svg>
-          </a>
+          </a> -->
         </div>
-        <div class="flex items-center relative w-1/3">
+        <div class="flex items-center justify-center relative lg:w-[40%] w-full">
           <img src="/wp-content/themes/sputnik/resources/images/features-payment.png"
-              class="w-[200px] max-w-[200px] rounded-sm transform scale-[1.7] group-hover:scale-[1.8] -right-32 top-30 group-hover:-translate-x-3 absolute shadow-xl transition delay-150 duration-500 ease-in-out "
+              class="mt-2 md:mt-0 w-[80%] max-w-[80%] lg:max-w-[175%] lg:w-auto lg:-mr-[90%] lg:h-[75%] rounded-sm group-hover:scale-[1.2] lg:transform shadow-xl transition delay-150 duration-500 ease-in-out "
               alt="Ecommerce payment gateways" />
-          </div>
-          
+        </div>  
       </div>
 
-      <!--additional blocks-->
-      <div class="flex flex-col overflow-hidden rounded-2xl group relative transition bg-[#e7e8e9] hover:bg-[#dfe0e1] hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 col-span-6">
+      <!--block three Digital Ads Campaigns-->
+      <div class="col-span-12 sm:col-span-6 flex flex-col overflow-hidden rounded-2xl group relative transition bg-[#f0f0f0] hover:bg-[#dfe0e1] hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
         <div class="relative space-y-8 py-12 p-8">
           <div class="inline-flex">
             <img
@@ -107,29 +101,32 @@
             Struggling to get your ads seen by the right people? We specialize in creating and managing high-performing ad campaigns across Google, Facebook, Instagram, and more.
             </p>
           </div>
-          <a href="#" class="flex items-center justify-between group-hover:text-primary">
+          <!-- <a href="#" class="flex items-center justify-between group-hover:text-primary">
             <span class="text-sm">Read more</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 -translate-x-4 text-2xl opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:opacity-100">
               <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd" />
             </svg>
-          </a>
+          </a> -->
         </div>
 
-        <div class="relative">
-          <img src="/wp-content/themes/sputnik/resources/images/ads-dash.jpg"
-              class="relative w-[235px] max-w-[235px] transition shadow-xl delay-150 duration-500 ease-in-out transform group-hover:scale-[1.2] translate-x-[100%] translate-y-1/4 group-hover:translate-x-[20%] group-hover:-translate-y-[20%]"
-              alt="Ad campaign dashboard example" />
+        <div class="flex items-center justify-center relative">
+          <img src="/wp-content/themes/sputnik/resources/images//feature-images/features-adcampaigns.png"
+              class="w-[80%] max-w-[80%] rounded-sm transform group-hover:scale-[1.2] group-hover:-translate-4 shadow-xl transition delay-150 duration-500 ease-in-out"
+              alt="Ad campaign dashboard mockup" />
 
-            <img
-            src="/wp-content/themes/sputnik/resources/images/ads-overlay.jpg"
-            class="absolute w-[235px] max-w-[235px] top-0 left-5 transition shadow-xl delay-150 duration-500 ease-in-out z-20 transform -translate-x-1/16 -translate-y-[40%] group-hover:translate-x-[105%] group-hover:translate-y-1/4"
-            alt="Ad campaign statistics example" />
-          </div>
+        </div>
 
       </div>
-
-      <div class="trigger overflow-hidden flex col-span-6 rounded-2xl group relative bg-[#f7ece7] hover:bg-[#f4e5df] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
-        <div class="w-2/3 relative space-y-8 py-12 p-8 w-1/2">
+      <!-- website security and maintenance -->
+      <div class="col-span-12 md:col-span-6 trigger overflow-hidden flex flex-col rounded-2xl group relative transition bg-[#f7ece7] hover:bg-[#f4e5df] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+        <div class="hidden xl:block invaders absolute w-96 z-30">
+          <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
+          <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
+          <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
+          <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
+        </div>
+        <div class="relative space-y-8 py-12 p-8">
+          
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/cybersecurity.svg"
@@ -142,17 +139,18 @@
           </div>
           <div class="space-y-2">
             
-            <p class="text-gray-600">
+            <p class="text-gray-600 dark:text-gray-300">
             Our WordPress maintenance and security services will keep your site running smoothly and protect it from hackers and malware.
             </p>
           </div>
-          <a href="#" class="flex items-center justify-between group-hover:text-primary">
+          <!-- <a href="#" class="flex items-center justify-between group-hover:text-primary">
             <span class="text-sm">Read more</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 -translate-x-4 text-2xl opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:opacity-100">
               <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd" />
             </svg>
-          </a>
+          </a> -->
         </div>
+        
         <style>
           .invaders {
             top: -12em;
@@ -176,31 +174,19 @@
 }
         </style>
 
-        <div class="flex relative w-1/2">
-          <div class="invaders absolute w-96 z-30">
-            <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
-            <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
-            <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
-            <div class="w-full text-center"><img src="/wp-content/themes/sputnik/resources/images/invader.svg" class="inline w-12" alt="Maintenance and security" /></div>
-          </div>
+        <div class="flex items-center justify-center relative lg:-mb-[22rem]">
           
           <img
-          src="/wp-content/themes/sputnik/resources/images/security-stats.jpg"
-          class="-right-6 w-[275px] max-w-[275px] transition absolute self-center shadow-xl delay-150 duration-500 relative z-20 ease-in-out transform group-hover:scale-[0.8] group-hover:translate-x-1/3 group-hover:-translate-y-1/8"
-          alt="Wordpress maintenance and security dashboard" />
-          
-          
-          <img
-          src="/wp-content/themes/sputnik/resources/images/security-dash.jpg"
-          class="-right-14 -bottom-1 transition absolute self-end shadow-xl delay-150 duration-500 ease-in-out transform group-hover:scale-[1.6] group-hover:translate-x-1/5 group-hover:-translate-y-1/5"
-          alt="Wordpress maintenance and security dashboard" />
+            src="/wp-content/themes/sputnik/resources/images/feature-images/features-security.png"
+            class="w-[80%] max-w-[80%] rounded-sm transform group-hover:scale-[1.2] group-hover:-translate-3 shadow-xl transition delay-150 duration-500 ease-in-out "
+            alt="Wordpress maintenance and security dashboard" />
 
         </div>
       </div>
 
-      <!--three blocks-->
-      <div class="overflow-hidden flex flex-col col-span-4 rounded-2xl group relative bg-[#f7ece7] hover:bg-[#f4e5df] hover:shadow-2xl hover:shadow-gray-600/10">
-        <div class="relative rounded-2xl space-y-8 py-12 p-8 transition duration-500">
+      <!--three blocks - Design and Branding-->
+      <div class="col-span-12 md:col-span-4 overflow-hidden flex flex-col rounded-2xl group relative bg-[#f7ece7] hover:bg-[#f4e5df] hover:shadow-2xl hover:shadow-gray-600/10">
+        <div class="relative rounded-2xl space-y-8 pt-12 pb-8 px-8 transition duration-500">
           <div class="inline-flex">
             <img
               src="/wp-content/themes/sputnik/resources/images/Responsive-icon-1.svg"
@@ -213,26 +199,27 @@
           </div>
           <div class="space-y-2">
             <p class="text-gray-600 dark:text-gray-300">
-              Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
+            Whether you are looking to renovate your existing brand, or start from scratch, we offer an array of design solutions, including web design, logo creation, print and more.
             </p>
           </div>
-          <a href="#" class="flex items-center justify-between group-hover:text-primary">
+          <!-- <a href="#" class="flex items-center justify-between group-hover:text-primary">
             <span class="text-sm">Read more</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 -translate-x-4 text-2xl opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:opacity-100">
               <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd" />
             </svg>
-          </a>
+          </a> -->
         </div>
 
-        <div class="flex items-center justify-center relative">
+        <div class="flex items-center justify-center relative -mb-[2rem]">
 
-          <img src="/wp-content/themes/sputnik/resources/images/branding.jpg"
-              class="w-[200px] max-w-[200px] rounded-sm transform group-hover:scale-[1.3] group-hover:-translate-3 shadow-xl transition delay-150 duration-500 ease-in-out"
+          <img src="/wp-content/themes/sputnik/resources/images/feature-images/features-design.png"
+              class="mt-2 md:mt-0 w-[80%] max-w-[80%] rounded-sm transform group-hover:scale-[1.2] group-hover:-translate-3 shadow-xl transition delay-150 duration-500 ease-in-out"
               alt="Branding and design example" />
           </div>
       </div>
 
-      <div class="overflow-hidden rounded-2xl group relative bg-[#e7e8e9] hover:bg-[#dfe0e1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 col-span-4">
+      <!-- hosting and domains -->
+      <div class="col-span-12 sm:col-span-7 md:col-span-4 overflow-hidden rounded-2xl group relative bg-[#f0f0f0] hover:bg-[#dfe0e1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
         <div class="relative space-y-8 pt-12 pb-8 px-8">
           <div class="inline-flex">
             <img
@@ -249,29 +236,25 @@
             <p class="text-gray-600 dark:text-gray-300">
             We provide managed website hosting packages, specially optimized for WordPress. Get the fastest performance, enhanced security, and the best in customer support.            </p>
           </div>
-          <a href="#" class="flex items-center justify-between group-hover:text-primary">
+          <!-- <a href="#" class="flex items-center justify-between group-hover:text-primary">
             <span class="text-sm">Read more</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 -translate-x-4 text-2xl opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:opacity-100">
               <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd" />
             </svg>
-          </a>
+          </a> -->
         </div>
 
         <div class="flex items-center justify-center relative">
-          <img src="/wp-content/themes/sputnik/resources/images/hosting-dash.jpg"
-              class="relative w-[235px] max-w-[235px] transition shadow-xl delay-150 duration-500 ease-in-out transform group-hover:scale-[1.2] group-hover:translate-x-1/4 group-hover:translate-y-1/4"
+          <img src="/wp-content/themes/sputnik/resources/images/feature-images/features-hosting.png"
+              class="w-[80%] max-w-[80%] rounded-sm transform group-hover:scale-[1.2] group-hover:-translate-3 shadow-xl transition delay-150 duration-500 ease-in-out"
               alt="Hosting dashboard example" />
 
-            <img
-            src="/wp-content/themes/sputnik/resources/images/hosting-overlay.jpg"
-            class="-left-12 scale-[0.5] flex self-center transition absolute shadow-xl delay-150 duration-500 ease-in-out z-20 transform group-hover:scale-[0.7] group-hover:-translate-x-1/16 group-hover:-translate-y-[30%]"
-            alt="Hosting statistics example" />
         </div>
       </div>
 
 
 
-      <div class="col-span-4 rounded-2xl group relative bg-[#ecf3f5] hover:bg-[#e4eff1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+      <div class="col-span-12 sm:col-span-5 md:col-span-4 rounded-2xl group relative bg-[#ecf3f5] hover:bg-[#e4eff1] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
         <div class="relative space-y-8 py-12 p-8 ">
           <div class="inline-flex">
             <img
@@ -286,19 +269,33 @@
           </div>
 
           <div class="space-y-2">
-            <p class="text-gray-600">
-              Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
-            </p>
-            <p class="text-gray-600">
-              Neque Dolor, fugiat non cum doloribus aperiam voluptates nostrum.
-            </p>
+            <ul class="pl-4 text-gray-600">
+            <li>Accessibility Testing</li>
+
+            <li>Search Engine Optimization</li>
+
+            <li>Social Media Management</li>
+
+            <li>Content Creation</li>
+
+            <li>Marketing Strategy</li>
+
+            <li>AI Integrations</li>
+
+            <li>a/b Testing</li>
+
+            <li>Web Consultancy</li>
+
+            <li>App Development</li>
+          </ul>
+            
           </div>
-          <a href="#" class="flex items-center justify-between group-hover:text-primary">
+          <!-- <a href="#" class="flex items-center justify-between group-hover:text-primary">
             <span class="text-sm">Read more</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 -translate-x-4 text-2xl opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:opacity-100">
               <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd" />
             </svg>
-          </a>
+          </a> -->
         </div>
       </div>
       

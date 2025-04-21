@@ -3,6 +3,7 @@ const config = {
   content: ['./app/**/*.php', './resources/**/*.{php,vue,js}'],
   theme: {
     screens: {
+      xs: '400px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -27,7 +28,7 @@ const config = {
         300: "#ACAEB6",
         400: "#92959F",
         500: "#777C87",
-        600: "#5D6370",
+        600: "#474747",
         700: "#434959",
         800: "#293041",
         900: "#0f172a",

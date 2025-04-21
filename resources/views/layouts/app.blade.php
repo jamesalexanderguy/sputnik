@@ -8,10 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
 
-  <body @php(body_class())>
+  <body @php(body_class('overflow-x-hidden'))>
     @php(wp_body_open())
 
-    <div id="app" class="bg-white dark:bg-gray-900"><!-- wrapper -->
+    <div id="app" class="bg-white"><!-- wrapper -->
       
       <a class="sr-only focus:not-sr-only" href="#main">
         {{ __('Skip to content') }}
@@ -22,12 +22,6 @@
       <main id="main" class="main">
         @yield('content')
       </main>
-
-      @hasSection('sidebar')
-        <aside class="sidebar">
-          @yield('sidebar')
-        </aside>
-      @endif
 
       @include('sections.footer')
     </div>
