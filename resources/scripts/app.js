@@ -36,6 +36,58 @@ domReady(async () => {
   }, 1500);
 });
 
+// modal setup for blocks
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    const showSlide = (index) => {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('hidden', i !== index);
+      });
+    };
+
+    document.getElementById('nextSlide').addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    document.getElementById('prevSlide').addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    // Optional: reset to first slide when modal opens
+    document.getElementById('openModalBtn').addEventListener('click', () => {
+      currentSlide = 0;
+      showSlide(currentSlide);
+    });
+
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const modal = document.getElementById('packModal');
+    const body = document.body;
+    
+    openBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      body.classList.add('overflow-hidden'); // lock scroll
+    });
+    
+    closeBtn.addEventListener('click', function () {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      body.classList.remove('overflow-hidden'); // unlock scroll
+    });
+    
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        body.classList.remove('overflow-hidden'); // unlock scroll
+      }
+    });
+
   // close menu on backdrop click
   navLayer.addEventListener('click', function() {
     let count = 0;

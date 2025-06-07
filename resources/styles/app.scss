@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
 
+
 // variables - put in separate file
 
 // media queries
@@ -36,6 +37,13 @@ $widescreen-lg: "only screen and (min-width: 1200px)";
 //xl	80rem (1280px)	@media (width >= 80rem) { ... }
 //2xl	96rem (1536px)	@media (width >= 96rem) { ... }
 
+main a {
+  border-bottom: #005c99 1px solid;
+
+  &:hover {
+    border-bottom-style: dotted;
+  }
+}
 
 #contact,
 #about,
@@ -126,3 +134,4 @@ body {
     right: 0;
   }
 }
+

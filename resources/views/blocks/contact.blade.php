@@ -23,12 +23,7 @@
             
             @php echo do_shortcode('[contact-form-7 id="7110611" title="Contact form 1"]') @endphp
           </div>
-          <div class="inline-block flex-wrap justify-left mt-0">
-            <span class="relative flex h-12 w-full items-left justify-left px-8 before:absolute before:inset-0 before:rounded-md before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
-                <input type="submit" class="wpcf7-form-control wpcf7-submit has-spinner relative text-base text-white" value="Contact">
-</span>
-              
-          </div>
+          
         </div>
         
     </div>
