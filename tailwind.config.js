@@ -12,6 +12,10 @@ const config = {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
       },
+      screens: {
+        custom: '900px',
+        custom650: '650px',
+      },
     },
   },
   plugins: [],

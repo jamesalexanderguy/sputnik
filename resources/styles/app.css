@@ -5,15 +5,85 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-sans text-black;
-  }
-
   a {
-    @apply text-linkcolor transition-colors duration-300;
+    color: theme('colors.white');
+    transition-property: color;
+    transition-duration: 300ms;
+    mix-blend-mode: difference;
   }
 
   a:hover {
-    @apply text-hovercolor;
+    color: theme('colors.hovercolor');
+  }
+
+  a.mix-blend-difference {
+    color: theme('colors.white');
+    transition-property: color;
+    transition-duration: 300ms;
+    mix-blend-mode: difference;
+  }
+
+  a.mix-blend-difference:hover {
+    color: theme('colors.hovercolor');
   }
 }
+
+@layer utilities {
+  .open-sesame {
+    overflow-y: hidden;
+  }
+  .open-sesame .mix-blend-difference {
+    mix-blend-mode: normal !important;
+    color: black !important;
+  }
+  .open-sesame .mix-blend-difference:hover {
+    mix-blend-mode: normal !important;
+    color: theme('colors.hovercolor');
+  }
+  .open-sesame .headwrap {
+    z-index: 1000;
+  }
+  .open-sesame .headwrap button:hover, .open-sesame .headwrap li a:hover {
+    color: #EEE444 !important
+  }
+}
+
+@layer utilities {
+    #pnav li:nth-child(2),
+    #pnav li:nth-child(3) {
+        @apply hidden custom650:flex;
+        margin-top: -17%;
+    }
+
+    #pnav li:nth-child(3) {
+        margin-right: -17%;
+    }
+
+    #pnav li:nth-child(4) a {
+        position: relative;
+        top: 300%;
+    }
+
+    #mobnav {
+        @apply flex custom650:hidden;
+    }
+
+    #mobnav .inst {
+        @apply hidden;
+    }
+
+    #mobnav li:nth-child(1) {
+      text-align: right;
+  }
+}
+
+@media (max-width: 768px) {
+  #wpadminbar {
+    display: none !important;
+  }
+
+  html {
+    margin-top: 0 !important;
+  }
+}
+  

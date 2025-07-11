@@ -1,5 +1,5 @@
 
-<div class="w-full">
+<div class="w-full bg-white">
 
   @php $rows = get_field('rows'); @endphp
 
@@ -26,7 +26,7 @@
             <div style="{{ $style }}">
               <div class="relative">
                 @if($details)
-                <div class="absolute @if($movetop) top-0 @else bottom-0 @endif left-0 p-[20px] w-full text-[#7f7f7f]">
+                <div class="absolute @if($movetop) top-0 @else bottom-0 @endif left-0 p-[20px] w-full text-[#7f7f7f] [font-size:clamp(0.5rem,1.5vw,1rem)]">
                   {!! $details !!}
                 </div>
                 @endif
@@ -46,6 +46,11 @@
       </section>
     @endforeach
   @endif
+  <section>@if ($video = get_field('your_oembed_field'))
+  <div class="w-full aspect-video">
+    {!! $video !!}
+  </div>
+@endif</section>
 
 </div>
 
