@@ -15,6 +15,8 @@ const config = {
       screens: {
         custom: '900px',
         custom650: '650px',
+        landscape: { raw: "(orientation: landscape)" },
+        portrait: { raw: "(orientation: portrait)" },
       },
     },
   },

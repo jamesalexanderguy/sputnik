@@ -29,6 +29,9 @@
 }
 
 @layer utilities {
+  body {
+    min-width: 300px;
+  }
   .open-sesame {
     overflow-y: hidden;
   }
@@ -74,7 +77,15 @@
 
     #mobnav li:nth-child(1) {
       text-align: right;
-  }
+    }
+
+    .aspect-video > p {
+      @apply w-full h-full m-0;
+    }
+    .aspect-video iframe {
+      @apply w-full h-full;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -86,4 +97,40 @@
     margin-top: 0 !important;
   }
 }
-  
+
+@media (max-width: 800px) and (orientation: landscape) {
+  #mobnav ul,
+  #pnav ul {
+    flex-direction: column !important;
+    padding-left: 330px !important;
+    width: calc(100% - 330px) !important;
+  }
+  .branding {
+    position: relative !important;
+    left: 330px !important;
+  }
+  .modal-content {
+    width: 300px !important;
+  }
+  #mobnav li:nth-child(1) {
+    position: absolute;
+  }
+  #mobnav li:nth-child(2) {
+    position: absolute;
+  }
+  #pnav li:nth-child(4) a {
+    position: relative;
+    top: 80px;
+  }
+  #pnav li:nth-child(3) {
+    position: absolute;
+    top: 42px;
+  }
+  #pnav li:nth-child(2) {
+    position: absolute;
+  }
+  body {
+    min-width: 580px;
+    min-height: 300px;
+  }
+}
