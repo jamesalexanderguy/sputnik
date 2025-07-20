@@ -76,6 +76,10 @@ add_action('after_setup_theme', function () {
      */
     add_theme_support('responsive-embeds');
 
+    add_image_size('xlarge', 2560, 9999, false);
+
+    update_option('large_size_w', 2560);
+
     /**
      * Enable HTML5 markup support.
      *

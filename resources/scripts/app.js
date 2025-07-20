@@ -4,6 +4,7 @@ domReady(async () => {
   const triggers = document.querySelectorAll('.branding, .info, .menu-item-info');
   const modal = document.querySelector('#info-modal');
   const body = document.body;
+  const html = document.documentElement;
   const wordInfo = document.querySelector('.info.wordinfo');
 
   if (!modal || !triggers.length) return;
@@ -11,6 +12,7 @@ domReady(async () => {
   const toggleModal = () => {
     modal.classList.toggle('hidden');
     body.classList.toggle('open-sesame');
+    html.classList.toggle('open-sesame');
     if (wordInfo) {
       const isOpen = body.classList.contains('open-sesame');
       wordInfo.textContent = isOpen ? 'close' : 'info';

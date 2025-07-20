@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -31,9 +31,7 @@
 @layer utilities {
   body {
     min-width: 300px;
-  }
-  .open-sesame {
-    overflow-y: hidden;
+    min-height: 600px;
   }
   .open-sesame .mix-blend-difference {
     mix-blend-mode: normal !important;
@@ -54,8 +52,7 @@
 @layer utilities {
     #pnav li:nth-child(2),
     #pnav li:nth-child(3) {
-        @apply hidden custom650:flex;
-        margin-top: -17%;
+        @apply hidden custom660:flex;
     }
 
     #pnav li:nth-child(3) {
@@ -64,21 +61,21 @@
 
     #pnav li:nth-child(4) a {
         position: relative;
-        top: 300%;
+        top: 80%;
+        @apply hidden custom660:inline-block;
     }
 
     #mobnav {
-        @apply flex custom650:hidden;
+        @apply flex custom660:hidden;
     }
 
-    #mobnav .inst {
+    #mobnav .inst a {
         @apply hidden;
     }
 
     #mobnav li:nth-child(1) {
       text-align: right;
     }
-
     .aspect-video > p {
       @apply w-full h-full m-0;
     }
@@ -86,6 +83,38 @@
       @apply w-full h-full;
     }
 
+}
+
+#pnav li.email,
+#pnav li.phone {
+  height: 30vh;
+}
+
+button.info {
+  position: absolute;
+    bottom: 50%;
+    margin-bottom: -12px;
+    font-size: 1.1rem !important;
+}
+
+.modal-content p {
+  text-align: justify;
+}
+
+#mobnav ul li,
+#pnav ul li, 
+#mobnav ul button,
+#pnav ul button {
+  font-size: 0.8rem;
+}
+
+#mobnav ul li,
+#pnav ul li {
+  font-weight: 200;
+}
+
+#pnav li.email {
+  margin-left: 7rem;
 }
 
 @media (max-width: 768px) {
@@ -98,39 +127,27 @@
   }
 }
 
-@media (max-width: 800px) and (orientation: landscape) {
-  #mobnav ul,
-  #pnav ul {
-    flex-direction: column !important;
-    padding-left: 330px !important;
-    width: calc(100% - 330px) !important;
-  }
+@media (max-height: 580px) and (orientation: landscape) {
   .branding {
-    position: relative !important;
-    left: 330px !important;
-  }
-  .modal-content {
-    width: 300px !important;
-  }
-  #mobnav li:nth-child(1) {
     position: absolute;
   }
-  #mobnav li:nth-child(2) {
+  .info {
+    height: 200%;
+  }
+  #pnav li.phone a {
     position: absolute;
   }
-  #pnav li:nth-child(4) a {
-    position: relative;
+  #pnav li:nth-child(1) {
+    position: absolute;
+    text-align: right;
     top: 80px;
-  }
-  #pnav li:nth-child(3) {
-    position: absolute;
-    top: 42px;
   }
   #pnav li:nth-child(2) {
     position: absolute;
+    top: 110px;
   }
-  body {
-    min-width: 580px;
-    min-height: 300px;
+  .headwrap {
+    top: 40%;
+    padding-left: 450px;
   }
 }

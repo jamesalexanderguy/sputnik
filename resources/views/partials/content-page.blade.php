@@ -40,22 +40,23 @@
               <div style="{{ $style }}">
                 <div class="relative">
                   @if($details)
-                    <div class="absolute @if($movetop) top-0 @else bottom-0 @endif left-0 p-[20px] w-full text-[#7f7f7f] [font-size:clamp(0.5rem,1.5vw,1rem)]">
+                    <div class="absolute @if($movetop) top-0 @else bottom-0 @endif left-0 p-[20px] w-full text-[#7f7f7f] [font-size:clamp(0.5rem,1.25vw,0.85rem)]">
                       {!! $details !!}
                     </div>
                   @endif
 
                   @if($photo)
                     <picture>
-                      <source media="(min-width: 1024px)" srcset="{{ $photo['sizes']['large'] ?? $photo['url'] }}">
+                      <source media="(min-width: 1024px)" srcset="{{ $photo['sizes']['xlarge'] ?? $photo['url'] }}">
                       <source media="(min-width: 640px)" srcset="{{ $photo['sizes']['medium_large'] ?? $photo['url'] }}">
                       <img 
-                        src="{{ $photo['url'] }}" 
+                        src="{{ $photo['sizes']['medium'] ?? $photo['url'] }}" 
                         alt="{{ $photo['alt'] ?? '' }}" 
                         class="w-full h-auto"
                       >
                     </picture>
                   @endif
+
                 </div>
               </div>
             </div>
