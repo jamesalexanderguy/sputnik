@@ -7,7 +7,7 @@
     @php(wp_head())
   </head>
 
-  <body @php(body_class())>
+  <body class="{{ implode(' ', get_body_class()) }}">
     @php(wp_body_open())
 
     <div id="app">

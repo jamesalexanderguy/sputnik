@@ -1249,6 +1249,16 @@
           "color": "#4c0519",
           "name": "Rose 950",
           "slug": "rose-950"
+        },
+        {
+          "color": "#97c5ff",
+          "name": "Babyblue",
+          "slug": "babyblue"
+        },
+        {
+          "color": "#d91420",
+          "name": "Scarletred",
+          "slug": "scarletred"
         }
       ]
     },
