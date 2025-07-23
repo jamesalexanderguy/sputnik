@@ -1,7 +1,9 @@
 import domReady from '@roots/sage/client/dom-ready';
 import Alpine from 'alpinejs';
+import '../scripts/components/alpine-blog.js'
 
 window.Alpine = Alpine;
+
 
 /**
  * Application entrypoint
