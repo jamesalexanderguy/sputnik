@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@200;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+      @apply text-5xl font-bold leading-tight text-darkroyal;
+    }
+    h2 {
+      @apply text-4xl font-semibold leading-snug text-darkroyal;
+    }
+    h3 {
+      @apply text-3xl font-medium leading-snug text-darkroyal;
+    }
+    h4 {
+      @apply text-2xl font-medium leading-snug text-darkroyal;
+    }
+    h5 {
+      @apply text-xl font-medium text-darkroyal;
+    }
+    h6 {
+      @apply text-lg font-medium font-inter text-darkroyal;
+    }
+    p {
+      @apply text-base text-darkroyal leading-relaxed;
+    }
+    ul {
+      @apply list-disc pl-5;
+    }
+    a {
+      @apply underline text-babyblue hover:text-darkroyal transition-colors;
+    }
+  }
+
+  @layer components {
+    .wp-block-button__link {
+      @apply inline-block px-5 py-3 text-base font-semibold rounded-sm border transition duration-200 text-white bg-darkroyal border-transparent hover:bg-opacity-90;
+    }
+  
+    .has-scarletred-background {
+      @apply bg-scarletred hover:bg-red-700;
+    }
+  
+    .has-babyblue-background {
+      @apply bg-babyblue hover:bg-babybluemid;
+    }
+  
+    .has-darkroyal-background {
+      @apply bg-darkroyal hover:bg-opacity-90;
+    }
+  }
+
+.page-nav .current {
+    @apply font-bold text-black underline;
+}
+
+/* Prevent Alpine.js flash of content */
+[x-cloak] {
+    display: none !important;
+}
+
+.fullscreen-cover {
+    min-height: calc(100vh-80px);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.admin-bar .fullscreen-cover {
+    min-height: calc(100vh-112px);
+}
+

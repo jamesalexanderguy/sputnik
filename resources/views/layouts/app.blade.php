@@ -10,7 +10,7 @@
   <body class="{{ implode(' ', get_body_class()) }} font-sans leading-relaxed tracking-wide">
     @php(wp_body_open())
 
-    <div id="app" class="min-h-screen flex flex-col">
+    <div id="app" class="min-h-screen flex flex-col mt-[80px]">
       <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
         {{ __('Skip to content') }}
       </a>

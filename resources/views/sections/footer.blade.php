@@ -1,12 +1,5 @@
-<footer class="bg-white border-t mt-12">
-  <div class="container mx-auto px-4 py-8 text-center text-sm text-gray-600 space-y-4">
-    
-    {{-- Site Title or Logo --}}
-    <div>
-      <a href="{{ home_url('/') }}" class="text-xl font-bold text-blue-400 hover:text-blue-500 transition">
-        <img src="@asset('images/kootenay-avalanche-courses-logo.png')" alt="{{ get_bloginfo('name', 'display') }}" class="h-12 w-auto">
-      </a>
-    </div>
+<footer class="bg-darkroyal border-t mt-12 relative">
+  <div class="container mx-auto px-4 py-8 text-center text-sm text-white space-y-4">    
 
     {{-- Optional Footer Menu --}}
     @if (has_nav_menu('footer'))
@@ -26,5 +19,10 @@
     </div>
 
   </div>
+  <div class="pt-12 sm:pt-0">
+      <a href="{{ home_url('/') }}">
+        <img src="@asset('images/kootenay-avalanche-courses-logo.png')" alt="{{ get_bloginfo('name', 'display') }}" class="absolute bottom-0 left-0 h-20 w-auto">
+      </a>
+    </div>
 </footer>
 
