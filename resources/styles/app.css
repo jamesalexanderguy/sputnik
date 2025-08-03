@@ -1,1 +1,7 @@
 @import './_shared.css';
+
+@layer base {
+    .prose a {
+      @apply relative inline-block font-medium pb-0 transition-all duration-300 border-b border-dotted border-current hover:border-solid;
+    }
+}

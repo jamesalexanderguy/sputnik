@@ -4,21 +4,43 @@ const config = {
   safelist: [
     'sans',
     'wp-block-button__link',
+    'wp-block-button__link::after',
+    'wp-block-button__link:hover::after',
     'has-scarletred-background',
     'has-babyblue-background',
     'has-darkroyal-background',
     'has-white-background',
+    'has-babyblue-transp-background',
+    'has-darkroyal-transp-background',
+    'has-white-transp-background',
+    {
+      pattern: /mt-(0|1|2|3|4|5|6|7|8|9|10|12|16|20|24|32)/,
+    },
+    {
+      pattern: /my-(0|1|2|3|4|5|6|7|8|9|10|12|16|20|24|32)/,
+    },
+    {
+      pattern: /mb-(0|1|2|3|4|5|6|7|8|9|10|12|16|20|24|32)/,
+    },
+    {
+      pattern: /mx-(0|1|2|3|4|5|6|7|8|9|10|12|16|20|24|32)/,
+    },
   ],
   theme: {
     extend: {
       colors: {
         babyblue: '#97c5ff',
+        white: '#ffffff',
         babybluemid: '#b1d4ff',
         babybluelight: '#d6e8ff',
         faintgray: '#f7f9fc',
         faintgraydark: '#e9edf4',
         darkroyal: '#2a4269',
         scarletred: '#d91420',
+        transparent: 'transparent',
+        'white-transp': 'rgba(255, 255, 255, 0.8)',
+        'darkroyal-transp': 'rgba(42, 66, 105, 0.8)',
+        'babybluelight-transp': 'rgba(214, 232, 255, 0.8)',
       },
       fontFamily: {
         sans: ['Rajdhani', 'sans-serif'],

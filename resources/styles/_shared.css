@@ -6,37 +6,34 @@
 
 @layer base {
     h1 {
-      @apply text-5xl font-bold leading-tight text-darkroyal;
+      @apply uppercase leading-relaxed my-3 text-5xl font-bold text-darkroyal;
     }
     h2 {
-      @apply text-4xl font-semibold leading-snug text-darkroyal;
+      @apply uppercase my-3 text-4xl font-semibold leading-snug text-darkroyal;
     }
     h3 {
-      @apply text-3xl font-medium leading-snug text-darkroyal;
+      @apply uppercase my-3 text-3xl font-medium leading-snug text-darkroyal;
     }
     h4 {
-      @apply text-2xl font-medium leading-snug text-darkroyal;
+      @apply my-3 text-2xl font-medium leading-snug text-darkroyal;
     }
     h5 {
-      @apply text-xl font-medium text-darkroyal;
+      @apply uppercase my-3 text-xl font-medium text-darkroyal;
     }
     h6 {
-      @apply text-lg font-medium font-inter text-darkroyal;
+      @apply uppercase my-3 text-lg font-medium font-inter text-darkroyal;
     }
     p {
-      @apply text-base text-darkroyal leading-relaxed;
+      @apply my-3 text-base text-darkroyal leading-relaxed;
     }
-    ul {
-      @apply list-disc pl-5;
+    .prose ul {
+      @apply my-3 list-none pl-5;
     }
-    a {
-      @apply underline text-babyblue hover:text-darkroyal transition-colors;
-    }
-  }
+}
 
-  @layer components {
+@layer components {
     .wp-block-button__link {
-      @apply inline-block px-5 py-3 text-base font-semibold rounded-sm border transition duration-200 text-white bg-darkroyal border-transparent hover:bg-opacity-90;
+      @apply mb-3 uppercase inline-block px-5 py-3 text-base font-semibold rounded-sm hover:underline text-darkroyal bg-white border-darkroyal hover:text-white hover:bg-darkroyal transition-all duration-300;
     }
   
     .has-scarletred-background {
@@ -46,11 +43,52 @@
     .has-babyblue-background {
       @apply bg-babyblue hover:bg-babybluemid;
     }
+
+    .has-transparent-background {
+      @apply bg-transparent;
+    }
   
     .has-darkroyal-background {
       @apply bg-darkroyal hover:bg-opacity-90;
     }
-  }
+}
+
+:root :where(.wp-block-button.is-style-outline .wp-block-button__link) {
+  border-width: 1px;
+}
+
+a.kaclogo,
+figure a {
+  border: none !important;
+}
+
+.is-layout-flex.logo-bar {
+  gap: 2.5em;
+}
+
+.prose ul {
+  list-style-type: square;
+}
+
+h1.has-background {
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.2em 0.4em;
+}
+
+.wp-block-button__link::after {
+  content: '→';
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: inherit;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.wp-block-button__link:hover::after {
+  transform: translateX(4px);
+}
 
 .page-nav .current {
     @apply font-bold text-black underline;
@@ -72,3 +110,37 @@
     min-height: calc(100vh-112px);
 }
 
+/* mailchimp form block styles */
+
+.mc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+}
+
+.mc-label {
+  font-weight: 600;
+}
+
+.mc-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.mc-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #2a4269; /* darkroyal */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mc-button:hover {
+  background-color: #1e2f4a;
+}

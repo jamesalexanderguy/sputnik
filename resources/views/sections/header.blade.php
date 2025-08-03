@@ -1,7 +1,7 @@
 <div x-data="{ open: false }">
   <header class="fixed top-0 inset-x-0 z-[100] bg-white {{ is_user_logged_in() ? 'mt-[32px]' : '' }}">
     <div class="w-full flex items-end justify-between pr-4 py-0 relative z-50">
-      <a href="{{ home_url('/') }}" class="block">
+      <a href="{{ home_url('/') }}" class="kaclogo block">
         <img src="@asset('images/kootenay-avalanche-courses-logo.svg')" alt="{{ get_bloginfo('name', 'display') }}" class="h-20 w-auto">
       </a>
       <button

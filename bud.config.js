@@ -74,7 +74,7 @@ export default async (app) => {
         customFontSize: false,
       },
     })
-    .useTailwindColors()
-    .useTailwindFontFamily()
-    .useTailwindFontSize();
+    .useTailwindColors('extend')
+    .useTailwindFontFamily('extend')
+    .useTailwindFontSize('extend');
 };
