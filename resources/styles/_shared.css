@@ -70,11 +70,27 @@ figure a {
   list-style-type: square;
 }
 
-h1.has-background {
+h1.has-background,
+h2.has-background {
   display: inline;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   padding: 0.2em 0.4em;
+}
+
+.standard-cover .wp-block-cover__inner-container {
+  height: 52vh;
+}
+
+.hero-standard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.hero-standard h2 {
+  height: auto;
 }
 
 .wp-block-button__link::after {
@@ -100,14 +116,14 @@ h1.has-background {
 }
 
 .fullscreen-cover {
-    min-height: calc(100vh-80px);
+    min-height: calc(100vh);
     display: flex;
     align-items: center;
     justify-content: center; 
 }
 
 .admin-bar .fullscreen-cover {
-    min-height: calc(100vh-112px);
+    min-height: calc(100vh-32px);
 }
 
 /* mailchimp form block styles */

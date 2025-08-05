@@ -1,24 +1,24 @@
-<div x-data="{ open: false }">
-  <header class="fixed top-0 inset-x-0 z-[100] bg-white {{ is_user_logged_in() ? 'mt-[32px]' : '' }}">
+<div x-data="{ open: false }" x-effect="document.body.classList.toggle('overflow-hidden', open)">
+  <header class="fixed top-0 inset-x-0 z-[100] bg-transparent {{ is_user_logged_in() ? 'mt-[32px]' : '' }}">
     <div class="w-full flex items-end justify-between pr-4 py-0 relative z-50">
       <a href="{{ home_url('/') }}" class="kaclogo block">
         <img src="@asset('images/kootenay-avalanche-courses-logo.svg')" alt="{{ get_bloginfo('name', 'display') }}" class="h-20 w-auto">
       </a>
       <button
         @click="open = !open"
-        :class="{ 'open': open }"
+        :class="{ 'open': open } bg-darkroyal/40 rounded-md"
         class="relative w-10 h-10 z-50 focus:outline-none group mb-3 mr-8"
         ><span
-          class="block absolute h-0.5 w-8 bg-darkroyal transform transition duration-300 ease-in-out"
-          :class="open ? 'rotate-45 top-4' : 'top-2'"
+          class="block absolute h-0.5 pt-[2px] border-t-3 border-darkroyal w-10 bg-white transform transition duration-300 ease-in-out origin-center"
+          :class="open ? 'rotate-45 top-4 translate-x-[1px] translate-y-[1px]' : 'top-2 translate-y-0'"
         ></span>
         <span
-          class="block absolute h-0.5 w-8 bg-darkroyal transform transition duration-300 ease-in-out"
-          :class="open ? 'opacity-0' : 'top-4'"
+          class="block absolute h-0.5 pt-[2px] border-t-3 border-darkroyal w-10 bg-white transform transition duration-300 ease-in-out origin-[left_50%]"
+          :class="open ? 'opacity-0 top-4' : 'top-4'"
         ></span>
         <span
-          class="block absolute h-0.5 w-8 bg-darkroyal transform transition duration-300 ease-in-out"
-          :class="open ? '-rotate-45 top-4' : 'top-6'"
+          class="block absolute h-0.5 pt-[2px] border-t-3 w-10 border-darkroyal bg-white transform transition duration-300 ease-in-out origin-center"
+          :class="open ? '-rotate-45 top-4 translate-y-[0.5px]' : 'top-6 translate-y-0'"
         ></span>
       </button>
 
@@ -65,7 +65,7 @@
               class="mr-2 text-lg sm:hidden"
               x-text="isOpen({{ $index }}) ? '−' : '+'"
             ></span>
-            <span class="uppercase font-inter text-lg">{{ $item->title }}</span>
+            <span class="uppercase font-inter text-lg">{!! $item->title !!}</span>
           </button>
 
           <ul
@@ -78,7 +78,7 @@
           @foreach ($children as $child)
             <li>
               <a href="{{ esc_url($child->url) }}" class="hover:text-blue-700 block">
-                {{ $child->title }}
+                {!! $child->title !!}
               </a>
             </li>
           @endforeach
@@ -100,7 +100,7 @@
     x-transition:leave="transition-opacity ease-in duration-200"
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
-    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-10"
+    class="fixed inset-0 bg-darkroyal/85 backdrop-blur-sm z-10"
     @click="open = false"
   ></div>
 

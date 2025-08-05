@@ -13,6 +13,7 @@ const config = {
     'has-babyblue-transp-background',
     'has-darkroyal-transp-background',
     'has-white-transp-background',
+    'bg-darkroyal',
     {
       pattern: /mt-(0|1|2|3|4|5|6|7|8|9|10|12|16|20|24|32)/,
     },
@@ -57,6 +58,9 @@ const config = {
         '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
         '5xl': ['3rem', { lineHeight: '1' }],
         '6xl': ['3.75rem', { lineHeight: '1' }],
+      },
+      borderWidth: {
+        3: '3px',
       },
     },
   },
