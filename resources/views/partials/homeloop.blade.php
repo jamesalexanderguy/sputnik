@@ -1,9 +1,9 @@
 {{-- Blog loop to show in the 'home' template aka blog index --}}
 
 <div 
-  x-data="blogLoop()" 
+  x-data="contentLoop('/wp-json/sputnik/v1/posts', '/wp-json/wp/v2/categories?per_page=100')" 
   x-init="init()" 
-  class="container mx-auto px-4 py-12"
+  class="container mx-auto w-max-[1000px] px-4 py-12 {{ is_user_logged_in() ? 'mt-[112px]' : 'mt-[80px]' }}"
 >
 
   <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">

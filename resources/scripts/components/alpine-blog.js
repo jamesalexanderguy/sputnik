@@ -1,8 +1,8 @@
 document.addEventListener('alpine:init', () => {
-  Alpine.data('blogLoop', blogLoop)
-})
+  Alpine.data('contentLoop', (apiEndpoint, taxonomyEndpoint) => contentLoop(apiEndpoint, taxonomyEndpoint));
+});
 
-function blogLoop() {
+function contentLoop(apiEndpoint, taxonomyEndpoint) {
   return {
     posts: [],
     page: 1,
@@ -16,12 +16,17 @@ function blogLoop() {
       this.fetchCategories();
       this.fetchPosts();
     },
-
+    
     fetchCategories() {
-      fetch('/wp-json/wp/v2/categories')
+      fetch(taxonomyEndpoint)
         .then(res => res.json())
         .then(data => {
-          this.categories = data;
+          if (Array.isArray(data)) {
+            this.categories = data;
+          }
+        })
+        .catch(() => {
+          this.categories = [];
         });
     },
 
@@ -43,7 +48,7 @@ function blogLoop() {
         params.append('categories', this.activeCategories.join(','));
       }
 
-      fetch(`/wp-json/sputnik/v1/posts?${params.toString()}`)
+      fetch(`${apiEndpoint}?${params.toString()}`)
         .then(res => {
           if (!res.ok) this.hasMore = false;
           return res.json();

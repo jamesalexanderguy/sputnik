@@ -124,52 +124,107 @@ add_action('widgets_init', function () {
 });
 
 /**
-     * Register REST API route.
-     *
-     * 
-     */
+ * Register REST API routes for posts and courses.
+ */
+add_action('rest_api_init', function () {
+  // Blog posts route
+  register_rest_route('sputnik/v1', '/posts', [
+    'methods'  => 'GET',
+    'callback' => '\App\sputnik_get_posts',
+    'permission_callback' => '__return_true',
+  ]);
 
-     add_action('rest_api_init', function () {
-      register_rest_route('sputnik/v1', '/posts', [
-        'methods'  => 'GET',
-        'callback' => '\App\sputnik_get_posts',
-        'permission_callback' => '__return_true',
-      ]);
-    });
-    
-    function sputnik_get_posts($request) {
-      $args = [
-        'post_type'      => 'post',
-        'posts_per_page' => 6,
-        'paged'          => $request->get_param('page') ?: 1,
-        's'              => $request->get_param('search') ?: '',
-      ];
-    
-      if ($categories = $request->get_param('categories')) {
-        $args['category__in'] = array_map('intval', explode(',', $categories));
-      }
-    
-      $query = new \WP_Query($args);
-      $posts = [];
-    
-      foreach ($query->posts as $post) {
-        $posts[] = [
-          'id'     => $post->ID,
-          'title'  => get_the_title($post),
-          'excerpt'=> get_the_excerpt($post),
-          'date'   => get_the_date('', $post),
-          'link'   => get_permalink($post),
-          'image'  => get_the_post_thumbnail_url($post, 'large'),
-          'sticky' => is_sticky($post->ID),
-          'featured_image' => get_the_post_thumbnail_url($post->ID, 'medium'),
-        ];
-      }
-      error_log('Categories param: ' . print_r($request->get_param('categories'), true));
-  
-    
-      return rest_ensure_response($posts);
-    }
+  // Courses route
+  register_rest_route('sputnik/v1', '/courses', [
+    'methods'  => 'GET',
+    'callback' => '\App\sputnik_get_courses',
+    'permission_callback' => '__return_true',
+  ]);
+});
 
+/**
+ * Callback for fetching blog posts.
+ */
+function sputnik_get_posts($request) {
+  $args = [
+    'post_type'      => 'post',
+    'posts_per_page' => 6,
+    'paged'          => $request->get_param('page') ?: 1,
+    's'              => $request->get_param('search') ?: '',
+  ];
+
+  // Filter by category if provided
+  if ($cats = $request->get_param('categories')) {
+    $args['tax_query'] = [
+      [
+        'taxonomy' => 'category',
+        'field'    => 'term_id',
+        'terms'    => array_map('intval', explode(',', $cats)),
+      ]
+    ];
+  }
+
+  $query = new \WP_Query($args);
+  $posts = [];
+
+  foreach ($query->posts as $post) {
+    $posts[] = [
+      'id'     => $post->ID,
+      'title'  => get_the_title($post),
+      'excerpt'=> get_the_excerpt($post),
+      'date'   => get_the_date('', $post),
+      'link'   => get_permalink($post),
+      'image'  => get_the_post_thumbnail_url($post, 'large'),
+      'sticky' => is_sticky($post->ID),
+      'featured_image' => get_the_post_thumbnail_url($post->ID, 'medium'),
+    ];
+  }
+
+  return rest_ensure_response($posts);
+}
+
+/**
+ * Callback for fetching courses.
+ */
+function sputnik_get_courses($request) {
+  $args = [
+    'post_type'      => 'course',
+    'posts_per_page' => 6,
+    'paged'          => $request->get_param('page') ?: 1,
+    's'              => $request->get_param('search') ?: '',
+  ];
+
+  // Filter by course_category if provided
+  if ($cats = $request->get_param('categories')) {
+    $args['tax_query'] = [
+      [
+        'taxonomy' => 'course_category',
+        'field'    => 'term_id',
+        'terms'    => array_map('intval', explode(',', $cats)),
+      ]
+    ];
+  }
+
+  $query = new \WP_Query($args);
+  $posts = [];
+
+  foreach ($query->posts as $post) {
+    $posts[] = [
+      'id'     => $post->ID,
+      'title'  => get_the_title($post),
+      'excerpt'=> get_the_excerpt($post),
+      'date'   => get_the_date('', $post),
+      'link'   => get_permalink($post),
+      'image'  => get_the_post_thumbnail_url($post, 'large'),
+      'sticky' => is_sticky($post->ID),
+      'featured_image' => get_the_post_thumbnail_url($post->ID, 'medium'),
+    ];
+  }
+
+  return rest_ensure_response($posts);
+}
+
+    
 
 add_action('init', function () {
   // Override default 'page' template

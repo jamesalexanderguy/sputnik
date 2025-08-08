@@ -1,9 +1,9 @@
 {{-- Blog loop to show in the 'home' template aka blog index --}}
 
 <div 
-  x-data="blogLoop('course', 'course_category')" 
+  x-data="contentLoop('/wp-json/sputnik/v1/courses', '/wp-json/wp/v2/course_category')" 
   x-init="init()" 
-  class="container mx-auto px-4 py-12"
+  class="container mx-auto px-4 py-12 {{ is_user_logged_in() ? 'mt-[112px]' : 'mt-[80px]' }}"
 >
 
   <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
