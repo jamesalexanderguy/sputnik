@@ -63,8 +63,6 @@ function blogLoop() {
       } else {
         this.activeCategories.push(catId);
       }
-      console.log('Active categories:', this.activeCategories)
-
       this.fetchPosts(true);
     },
 

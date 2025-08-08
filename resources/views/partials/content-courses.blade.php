@@ -1,7 +1,7 @@
 {{-- Blog loop to show in the 'home' template aka blog index --}}
 
 <div 
-  x-data="blogLoop()" 
+  x-data="blogLoop('course', 'course_category')" 
   x-init="init()" 
   class="container mx-auto px-4 py-12"
 >
@@ -70,3 +70,4 @@
   <div x-show="loading" class="text-center py-4 text-gray-500">Loading…</div>
 
 </div>
+

@@ -129,44 +129,100 @@ add_action('widgets_init', function () {
      * 
      */
 
-add_action('rest_api_init', function () {
-    register_rest_route('sputnik/v1', '/posts', [
-      'methods'  => 'GET',
-      'callback' => '\App\sputnik_get_posts',
-      'permission_callback' => '__return_true',
-    ]);
-  });
-  
-  function sputnik_get_posts($request) {
-    $args = [
-      'post_type'      => 'post',
-      'posts_per_page' => 6,
-      'paged'          => $request->get_param('page') ?: 1,
-      's'              => $request->get_param('search') ?: '',
-    ];
-  
-    if ($categories = $request->get_param('categories')) {
-      $args['category__in'] = array_map('intval', explode(',', $categories));
-    }
-  
-    $query = new \WP_Query($args);
-    $posts = [];
-  
-    foreach ($query->posts as $post) {
-      $posts[] = [
-        'id'     => $post->ID,
-        'title'  => get_the_title($post),
-        'excerpt'=> get_the_excerpt($post),
-        'date'   => get_the_date('', $post),
-        'link'   => get_permalink($post),
-        'image'  => get_the_post_thumbnail_url($post, 'large'),
-        'sticky' => is_sticky($post->ID),
-        'featured_image' => get_the_post_thumbnail_url($post->ID, 'medium'),
+     add_action('rest_api_init', function () {
+      register_rest_route('sputnik/v1', '/posts', [
+        'methods'  => 'GET',
+        'callback' => '\App\sputnik_get_posts',
+        'permission_callback' => '__return_true',
+      ]);
+    });
+    
+    function sputnik_get_posts($request) {
+      $args = [
+        'post_type'      => 'post',
+        'posts_per_page' => 6,
+        'paged'          => $request->get_param('page') ?: 1,
+        's'              => $request->get_param('search') ?: '',
       ];
-    }
-    error_log('Categories param: ' . print_r($request->get_param('categories'), true));
-
+    
+      if ($categories = $request->get_param('categories')) {
+        $args['category__in'] = array_map('intval', explode(',', $categories));
+      }
+    
+      $query = new \WP_Query($args);
+      $posts = [];
+    
+      foreach ($query->posts as $post) {
+        $posts[] = [
+          'id'     => $post->ID,
+          'title'  => get_the_title($post),
+          'excerpt'=> get_the_excerpt($post),
+          'date'   => get_the_date('', $post),
+          'link'   => get_permalink($post),
+          'image'  => get_the_post_thumbnail_url($post, 'large'),
+          'sticky' => is_sticky($post->ID),
+          'featured_image' => get_the_post_thumbnail_url($post->ID, 'medium'),
+        ];
+      }
+      error_log('Categories param: ' . print_r($request->get_param('categories'), true));
   
-    return rest_ensure_response($posts);
+    
+      return rest_ensure_response($posts);
+    }
+
+
+add_action('init', function () {
+  // Override default 'page' template
+  $page_post_type = get_post_type_object('page');
+
+  if ($page_post_type) {
+      $page_post_type->template = [
+          [
+              'core/cover',
+              [
+                  'url' => 'https://kootenayavalanchecourses.test/wp-content/uploads/2025/08/4A9DB131-A2CC-469C-8F59-34B18F887A81_1_105_c-1-1.jpeg',
+                  'id' => 2873,
+                  'customOverlayColor' => 'transparent',
+                  'dimRatio' => 0,
+                  'className' => 'standard-cover',
+                  'isUserOverlayColor' => false,
+                  'sizeSlug' => 'full',
+                  'layout' => [ 'type' => 'constrained' ],
+                  'style' => [
+                    'spacing' => [
+                      'padding' => [
+                        'left' => 'var:preset|spacing|80',
+                        'right' => 'var:preset|spacing|80',
+                      ]
+                    ]
+                  ]
+              ],
+              [
+                  [
+                      'core/group',
+                      [
+                          'className' => 'hero-standard',
+                          'layout' => [
+                              'type' => 'flex',
+                              'orientation' => 'vertical',
+                              'flexWrap' => 'wrap',
+                              'justifyContent' => 'left'
+                          ]
+                      ],
+                      [
+                        [
+                            'core/post-title',
+                            [
+                                'className' => 'hero-standard text-white has-darkroyal-transp-background-color has-background',
+                                'level' => 2
+                            ]
+                        ]
+                    ]
+                  ]
+              ]
+          ]
+      ];
   }
+});
+
   

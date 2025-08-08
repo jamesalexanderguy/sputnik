@@ -82,6 +82,14 @@ h2.has-background {
   height: 52vh;
 }
 
+.standard-cover .wp-block-cover__background.has-background-dim {
+  background-color: transparent !important;
+}
+
+.standard-cover h2 {
+  color: #fff !important;
+}
+
 .hero-standard {
   display: flex;
   flex-direction: column;
@@ -160,3 +168,36 @@ h2.has-background {
 .mc-button:hover {
   background-color: #1e2f4a;
 }
+
+/* CF7 styles */
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="url"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form input[type="number"],
+.wpcf7-form input[type="date"],
+.wpcf7-form input[type="search"],
+.wpcf7-form input[type="password"],
+.wpcf7-form textarea,
+.wpcf7-form select {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem; 
+  border-radius: 0.375rem; 
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: .7rem;
+}
+
+.wpcf7-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.wpcf7-form p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
