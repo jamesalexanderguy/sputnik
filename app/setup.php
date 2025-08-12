@@ -10,8 +10,6 @@ use function Roots\bundle;
 
 /**
  * Register the theme assets.
- *
- * @return void
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
@@ -19,68 +17,27 @@ add_action('wp_enqueue_scripts', function () {
 
 /**
  * Register the theme assets with the block editor.
- *
- * @return void
  */
 add_action('enqueue_block_editor_assets', function () {
     bundle('editor')->enqueue();
 }, 100);
 
 /**
- * Register the initial theme setup.
- *
- * @return void
+ * Initial theme setup.
  */
 add_action('after_setup_theme', function () {
-    /**
-     * Disable full-site editing support.
-     *
-     * @link https://wptavern.com/gutenberg-10-5-embeds-pdfs-adds-verse-block-color-options-and-introduces-new-patterns
-     */
     remove_theme_support('block-templates');
 
-    /**
-     * Register the navigation menus.
-     *
-     * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
-     */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
     ]);
 
-    /**
-     * Disable the default block patterns.
-     *
-     * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-the-default-block-patterns
-     */
     remove_theme_support('core-block-patterns');
 
-    /**
-     * Enable plugins to manage the document title.
-     *
-     * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
-     */
     add_theme_support('title-tag');
-
-    /**
-     * Enable post thumbnail support.
-     *
-     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-     */
     add_theme_support('post-thumbnails');
-
-    /**
-     * Enable responsive embed support.
-     *
-     * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#responsive-embedded-content
-     */
     add_theme_support('responsive-embeds');
 
-    /**
-     * Enable HTML5 markup support.
-     *
-     * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
-     */
     add_theme_support('html5', [
         'caption',
         'comment-form',
@@ -91,193 +48,254 @@ add_action('after_setup_theme', function () {
         'style',
     ]);
 
-    /**
-     * Enable selective refresh for widgets in customizer.
-     *
-     * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
-     */
     add_theme_support('customize-selective-refresh-widgets');
 }, 20);
 
 /**
- * Register the theme sidebars.
- *
- * @return void
+ * Register sidebars.
  */
 add_action('widgets_init', function () {
     $config = [
         'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
     ];
 
     register_sidebar([
         'name' => __('Primary', 'sage'),
-        'id' => 'sidebar-primary',
+        'id'   => 'sidebar-primary',
     ] + $config);
 
     register_sidebar([
         'name' => __('Footer', 'sage'),
-        'id' => 'sidebar-footer',
+        'id'   => 'sidebar-footer',
     ] + $config);
 });
 
 /**
- * Register REST API routes for posts and courses.
+ * REST API routes.
  */
 add_action('rest_api_init', function () {
-  // Blog posts route
-  register_rest_route('sputnik/v1', '/posts', [
-    'methods'  => 'GET',
-    'callback' => '\App\sputnik_get_posts',
-    'permission_callback' => '__return_true',
-  ]);
+    register_rest_route('sputnik/v1', '/posts', [
+        'methods'             => 'GET',
+        'callback'            => '\App\sputnik_get_posts',
+        'permission_callback' => '__return_true',
+    ]);
 
-  // Courses route
-  register_rest_route('sputnik/v1', '/courses', [
-    'methods'  => 'GET',
-    'callback' => '\App\sputnik_get_courses',
-    'permission_callback' => '__return_true',
-  ]);
+    register_rest_route('sputnik/v1', '/courses', [
+        'methods'             => 'GET',
+        'callback'            => '\App\sputnik_get_courses',
+        'permission_callback' => '__return_true',
+    ]);
 });
 
 /**
- * Callback for fetching blog posts.
+ * Fetch blog posts.
  */
 function sputnik_get_posts($request) {
-  $args = [
-    'post_type'      => 'post',
-    'posts_per_page' => 6,
-    'paged'          => $request->get_param('page') ?: 1,
-    's'              => $request->get_param('search') ?: '',
-  ];
+    $page   = $request instanceof \WP_REST_Request ? $request->get_param('page') : null;
+    $search = $request instanceof \WP_REST_Request ? $request->get_param('search') : null;
+    $cats   = $request instanceof \WP_REST_Request ? $request->get_param('categories') : null;
 
-  // Filter by category if provided
-  if ($cats = $request->get_param('categories')) {
-    $args['tax_query'] = [
-      [
-        'taxonomy' => 'category',
-        'field'    => 'term_id',
-        'terms'    => array_map('intval', explode(',', $cats)),
-      ]
+    $args = [
+        'post_type'      => 'post',
+        'posts_per_page' => 6,
+        'paged'          => $page ?: 1,
+        's'              => $search ?: '',
     ];
-  }
 
-  $query = new \WP_Query($args);
-  $posts = [];
+    if ($cats) {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => 'category',
+                'field'    => 'term_id',
+                'terms'    => array_map('intval', explode(',', $cats)),
+            ]
+        ];
+    }
 
-  foreach ($query->posts as $post) {
-    $posts[] = [
-      'id'     => $post->ID,
-      'title'  => get_the_title($post),
-      'excerpt'=> get_the_excerpt($post),
-      'date'   => get_the_date('', $post),
-      'link'   => get_permalink($post),
-      'image'  => get_the_post_thumbnail_url($post, 'large'),
-      'sticky' => is_sticky($post->ID),
-      'featured_image' => get_the_post_thumbnail_url($post->ID, 'medium'),
-    ];
-  }
+    $query = new \WP_Query($args);
+    $posts = [];
 
-  return rest_ensure_response($posts);
+    foreach ($query->posts as $post) {
+        $thumb_id = get_post_thumbnail_id($post->ID);
+
+        $posts[] = [
+            'id'                    => $post->ID,
+            'title'                 => get_the_title($post),
+            'excerpt'               => get_the_excerpt($post),
+            'date'                  => get_the_date('', $post),
+            'link'                  => get_permalink($post),
+            'sticky'                => is_sticky($post->ID),
+            'featured_image'        => wp_get_attachment_image_url($thumb_id, 'medium_large'),
+            'featured_image_srcset' => wp_get_attachment_image_srcset($thumb_id, 'medium_large'),
+            'featured_image_sizes'  => wp_get_attachment_image_sizes($thumb_id, 'medium_large'),
+        ];
+    }
+
+    return rest_ensure_response($posts);
 }
 
 /**
- * Callback for fetching courses.
+ * Fetch courses.
  */
 function sputnik_get_courses($request) {
-  $args = [
-    'post_type'      => 'course',
-    'posts_per_page' => 6,
-    'paged'          => $request->get_param('page') ?: 1,
-    's'              => $request->get_param('search') ?: '',
-  ];
+    $page   = $request instanceof \WP_REST_Request ? $request->get_param('page') : null;
+    $search = $request instanceof \WP_REST_Request ? $request->get_param('search') : null;
+    $cats   = $request instanceof \WP_REST_Request ? $request->get_param('categories') : null;
 
-  // Filter by course_category if provided
-  if ($cats = $request->get_param('categories')) {
-    $args['tax_query'] = [
-      [
-        'taxonomy' => 'course_category',
-        'field'    => 'term_id',
-        'terms'    => array_map('intval', explode(',', $cats)),
-      ]
+    $args = [
+        'post_type'      => 'course',
+        'posts_per_page' => 6,
+        'paged'          => $page ?: 1,
+        's'              => $search ?: '',
     ];
-  }
 
-  $query = new \WP_Query($args);
-  $posts = [];
+    if ($cats) {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => 'course_category',
+                'field'    => 'term_id',
+                'terms'    => array_map('intval', explode(',', $cats)),
+            ]
+        ];
+    }
 
-  foreach ($query->posts as $post) {
-    $posts[] = [
-      'id'     => $post->ID,
-      'title'  => get_the_title($post),
-      'excerpt'=> get_the_excerpt($post),
-      'date'   => get_the_date('', $post),
-      'link'   => get_permalink($post),
-      'image'  => get_the_post_thumbnail_url($post, 'large'),
-      'sticky' => is_sticky($post->ID),
-      'featured_image' => get_the_post_thumbnail_url($post->ID, 'medium'),
-    ];
-  }
+    $query = new \WP_Query($args);
+    $posts = [];
 
-  return rest_ensure_response($posts);
+    foreach ($query->posts as $post) {
+        $thumb_id = get_post_thumbnail_id($post->ID);
+
+        $posts[] = [
+            'id'                    => $post->ID,
+            'title'                 => get_the_title($post),
+            'excerpt'               => get_the_excerpt($post),
+            'date'                  => get_the_date('', $post),
+            'link'                  => get_permalink($post),
+            'sticky'                => is_sticky($post->ID),
+            'featured_image'        => wp_get_attachment_image_url($thumb_id, 'medium_large'),
+            'featured_image_srcset' => wp_get_attachment_image_srcset($thumb_id, 'medium_large'),
+            'featured_image_sizes'  => wp_get_attachment_image_sizes($thumb_id, 'medium_large'),
+        ];
+    }
+
+    return rest_ensure_response($posts);
 }
 
-    
 
+/**
+ * Block template defaults & patterns.
+ */
 add_action('init', function () {
-  // Override default 'page' template
-  $page_post_type = get_post_type_object('page');
-
-  if ($page_post_type) {
-      $page_post_type->template = [
-          [
-              'core/cover',
-              [
-                  'url' => 'https://kootenayavalanchecourses.test/wp-content/uploads/2025/08/4A9DB131-A2CC-469C-8F59-34B18F887A81_1_105_c-1-1.jpeg',
-                  'id' => 2873,
-                  'customOverlayColor' => 'transparent',
-                  'dimRatio' => 0,
-                  'className' => 'standard-cover',
-                  'isUserOverlayColor' => false,
-                  'sizeSlug' => 'full',
-                  'layout' => [ 'type' => 'constrained' ],
-                  'style' => [
-                    'spacing' => [
-                      'padding' => [
-                        'left' => 'var:preset|spacing|80',
+    $title_cover = [
+        'core/cover',
+        [
+            'url'                => 'https://kootenayavalanchecourses.test/wp-content/uploads/2025/08/4A9DB131-A2CC-469C-8F59-34B18F887A81_1_105_c-1-1.jpeg',
+            'id'                 => 2873,
+            'customOverlayColor' => 'transparent',
+            'dimRatio'           => 0,
+            'className'          => 'standard-cover',
+            'sizeSlug'           => 'full',
+            'layout'             => ['type' => 'constrained'],
+            'style'              => [
+                'spacing' => [
+                    'padding' => [
+                        'left'  => 'var:preset|spacing|80',
                         'right' => 'var:preset|spacing|80',
-                      ]
-                    ]
-                  ]
-              ],
-              [
-                  [
-                      'core/group',
-                      [
-                          'className' => 'hero-standard',
-                          'layout' => [
-                              'type' => 'flex',
-                              'orientation' => 'vertical',
-                              'flexWrap' => 'wrap',
-                              'justifyContent' => 'left'
-                          ]
-                      ],
-                      [
+                    ],
+                ],
+            ],
+        ],
+        [
+            [
+                'core/group',
+                [
+                    'className' => 'hero-standard',
+                    'layout'    => [
+                        'type'          => 'flex',
+                        'orientation'   => 'vertical',
+                        'flexWrap'      => 'wrap',
+                        'justifyContent'=> 'left',
+                    ],
+                ],
+                [
+                    [
+                        'core/post-title',
                         [
-                            'core/post-title',
-                            [
-                                'className' => 'hero-standard text-white has-darkroyal-transp-background-color has-background',
-                                'level' => 2
-                            ]
-                        ]
-                    ]
-                  ]
-              ]
-          ]
-      ];
-  }
-});
+                            'className' => 'hero-standard text-white has-darkroyal-transp-background-color has-background',
+                            'level'     => 2,
+                        ],
+                    ],
+                ]
+            ]
+        ]
+    ];
 
-  
+    $date_cover = [
+        'core/cover',
+        [
+            'customOverlayColor' => '#ffffff',
+            'dimRatio'           => 100,
+            'className'          => 'is-light',
+            'minHeight'          => 74,
+            'aspectRatio'        => 'unset',
+            'style'              => [
+                'spacing' => [
+                    'padding' => [
+                        'left'  => 'var:preset|spacing|80',
+                        'right' => 'var:preset|spacing|80',
+                    ],
+                ],
+            ],
+        ],
+        [
+            [
+                'core/post-date',
+                [
+                    'format' => 'F j, Y',
+                    'style'  => [
+                        'spacing' => [
+                            'padding' => [
+                                'top'    => '0',
+                                'right'  => '0',
+                                'bottom' => '0',
+                                'left'   => '0',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ];
+
+    if ($page_pt = get_post_type_object('page')) {
+        $page_pt->template = [$title_cover];
+    }
+
+    if ($course_pt = get_post_type_object('course')) {
+        $course_pt->template = [$title_cover];
+    }
+
+    if ($post_pt = get_post_type_object('post')) {
+        $post_pt->template = [$title_cover, $date_cover];
+    }
+
+    if (function_exists('register_block_pattern')) {
+        $date_pattern_content = '
+<!-- wp:cover {"customOverlayColor":"#ffffff","dimRatio":100,"minHeight":74,"style":{"spacing":{"padding":{"left":"var:preset|spacing|80","right":"var:preset|spacing|80"}}},"className":"is-light","aspectRatio":"unset"} -->
+<div class="wp-block-cover is-light" style="padding-right:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--80);min-height:74px;aspect-ratio:unset"><span aria-hidden="true" class="wp-block-cover__background has-white-background-color has-background-dim-100"></span><div class="wp-block-cover__inner-container"><!-- wp:post-date {"format":"F j, Y","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}}} /--></div></div>
+<!-- /wp:cover -->
+        ';
+
+        register_block_pattern(
+            'kac/date-cover',
+            [
+                'title'       => __('Date cover (KAC)', 'kootenayavalanche'),
+                'description' => __('Cover bar with dynamic post date and matching padding', 'kootenayavalanche'),
+                'content'     => $date_pattern_content,
+            ]
+        );
+    }
+}, 20);

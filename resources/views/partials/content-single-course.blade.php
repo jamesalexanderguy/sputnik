@@ -1,41 +1,12 @@
-{{-- Course loop to show in the 'home' template aka blog index --}}
-
-{{-- Add premade pattern --}}
-{!! apply_filters('the_content', get_post(3098)->post_content) !!}
-
+<div class="prose">
+  @php(the_content())
+</div>
 <div 
   x-data="contentLoop('/wp-json/sputnik/v1/courses', '/wp-json/wp/v2/course_category')" 
   x-init="init()" 
-  class="container mx-auto max-w-[1000px] px-4 py-12"
+  class="container mx-auto max-w-[1000px] p-4"
 >
-
-@php(the_content())
-
-  <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-    <input 
-      type="text" 
-      x-model="search" 
-      @input.debounce.300ms="fetchPosts" 
-      placeholder="Search..." 
-      class="w-full md:w-1/3 border border-gray-300 rounded px-4 py-2"
-    />
-
-    <div class="flex flex-wrap gap-2">
-      <template x-for="cat in categories" :key="cat.id">
-        <button 
-          :class="{
-            'bg-scarletred bold text-white': activeCategories.includes(cat.id),
-            'bg-darkroyal bold text-white': !activeCategories.includes(cat.id)
-          }"
-          class="px-3 py-1 rounded text-sm"
-          @click="toggleCategory(cat.id)"
-        >
-          <span x-html="cat.name"></span>
-        </button>
-      </template>
-    </div>
-  </div>
-
+<h3>View Our Other Avalanche Training Courses</h3>
   <div 
     class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
     x-show="posts.length > 0"
@@ -80,4 +51,3 @@
   {!! apply_filters('the_content', get_post(2935)->post_content) !!}
   {!! apply_filters('the_content', get_post(2897)->post_content) !!}
 </div>
-

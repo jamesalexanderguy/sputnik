@@ -1,15 +1,9 @@
 <article 
-  @php(post_class('max-w-3xl mx-auto px-4 py-12')) 
+  @php(post_class('mx-auto pb-12')) 
   x-data 
   x-init="$el.scrollIntoView({ behavior: 'smooth' })"
 >
-  <header class="mb-8 border-b border-gray-200 pb-6">
-    <h1 class="text-4xl font-bold text-gray-900 leading-tight mb-2" x-data x-intersect="$el.classList.add('animate-fade-in-up')">
-      {!! $title !!}
-    </h1>
-    @php(the_post_thumbnail())
-    @include('partials.entry-meta')
-  </header>
+
 
   <div class="prose prose-lg max-w-none e-content text-gray-800">
     @php(the_content())
@@ -27,10 +21,14 @@
       </nav>
     </footer>
   @endif
-
+  @if (get_post_type() != 'course')
   @include('partials.prev-next')
+  @endif
 
-  <div class="mt-16">
-    @php(comments_template())
-  </div>
 </article>
+
+</div>
+<div class="prose">
+  {!! apply_filters('the_content', get_post(2935)->post_content) !!}
+  {!! apply_filters('the_content', get_post(2897)->post_content) !!}
+

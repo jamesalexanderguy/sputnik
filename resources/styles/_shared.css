@@ -134,6 +134,27 @@ h2.has-background {
     min-height: calc(100vh-32px);
 }
 
+.wp-block-pullquote {
+  margin-bottom: 0 !important;
+}
+
+.vbox-container img {
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.vbox-close {
+  height: 80px;
+  font-size: 80px;
+}
+
+.grecaptcha-badge { 
+  position: absolute !important; 
+  left: -9999px !important;
+  visibility: hidden !important;
+}
+
 /* mailchimp form block styles */
 
 .mc-form {
@@ -200,4 +221,3 @@ h2.has-background {
   margin-bottom: 0;
   margin-top: 0;
 }
-

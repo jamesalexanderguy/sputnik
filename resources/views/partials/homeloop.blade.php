@@ -1,11 +1,11 @@
 {{-- Blog loop to show in the 'home' template aka blog index --}}
 
+{!! apply_filters('the_content', get_post(3090)->post_content) !!}
 <div 
   x-data="contentLoop('/wp-json/sputnik/v1/posts', '/wp-json/wp/v2/categories?per_page=100')" 
   x-init="init()" 
-  class="container mx-auto w-max-[1000px] px-4 py-12 {{ is_user_logged_in() ? 'mt-[112px]' : 'mt-[80px]' }}"
+  class="container mx-auto max-w-[1000px] px-4 py-12"
 >
-
   <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
     <input 
       type="text" 
@@ -19,8 +19,8 @@
       <template x-for="cat in categories" :key="cat.id">
         <button 
           :class="{
-            'bg-blue-600 text-white': activeCategories.includes(cat.id),
-            'bg-gray-200 text-gray-800': !activeCategories.includes(cat.id)
+            'bg-scarletred bold text-white': activeCategories.includes(cat.id),
+            'bg-darkroyal bold text-white': !activeCategories.includes(cat.id)
           }"
           class="px-3 py-1 rounded text-sm"
           @click="toggleCategory(cat.id)"
@@ -61,7 +61,7 @@
   <div class="text-center mt-8" x-show="hasMore && !loading">
     <button 
       @click="loadMore" 
-      class="px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+      class="px-5 py-2 bg-darkroyal text-white rounded transition"
     >
       Load more
     </button>
@@ -70,3 +70,8 @@
   <div x-show="loading" class="text-center py-4 text-gray-500">Loading…</div>
 
 </div>
+<div class="prose">
+  {!! apply_filters('the_content', get_post(2935)->post_content) !!}
+  {!! apply_filters('the_content', get_post(2897)->post_content) !!}
+</div>
+
