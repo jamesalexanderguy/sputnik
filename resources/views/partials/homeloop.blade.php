@@ -4,7 +4,7 @@
 <div 
   x-data="contentLoop('/wp-json/sputnik/v1/posts', '/wp-json/wp/v2/categories?per_page=100')" 
   x-init="init()" 
-  class="container mx-auto max-w-[1000px] px-4 py-12"
+  class="container px-4 py-12 padmob" style="padding-left: var(--wp--preset--spacing--80); padding-right: var(--wp--preset--spacing--80);"
 >
   <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
     <input 
@@ -58,14 +58,6 @@
     No posts found.
   </div>
 
-  <div class="text-center mt-8" x-show="hasMore && !loading">
-    <button 
-      @click="loadMore" 
-      class="px-5 py-2 bg-darkroyal text-white rounded transition"
-    >
-      Load more
-    </button>
-  </div>
 
   <div x-show="loading" class="text-center py-4 text-gray-500">Loading…</div>
 

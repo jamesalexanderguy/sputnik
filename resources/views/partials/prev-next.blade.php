@@ -3,7 +3,7 @@
   $next_post = get_next_post();
 @endphp
 
-<div class="container prevnext mx-auto py-16" 
+<div class="container prevnext mx-auto py-16 padmob" 
      style="padding-left: var(--wp--preset--spacing--80); padding-right: var(--wp--preset--spacing--80);">
   <div class="grid md:grid-cols-2 gap-8 items-stretch">
     

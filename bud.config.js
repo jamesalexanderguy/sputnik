@@ -1,55 +1,39 @@
 /**
  * Compiler configuration
  *
- * @see {@link https://roots.io/sage/docs sage documentation}
- * @see {@link https://bud.js.org/learn/config bud.js configuration guide}
- *
  * @type {import('@roots/bud').Config}
  */
 export default async (app) => {
-  /**
-   * Application assets & entrypoints
-   *
-   * @see {@link https://bud.js.org/reference/bud.entry}
-   * @see {@link https://bud.js.org/reference/bud.assets}
-   */
   app
     .entry('app', ['@scripts/app', '@styles/app'])
     .entry('editor', ['@scripts/editor', '@styles/editor'])
     .assets(['images']);
 
-  /**
-   * Set public path
-   *
-   * @see {@link https://bud.js.org/reference/bud.setPublicPath}
-   */
   app.setPublicPath('/app/themes/sage/public/');
 
-  /**
-   * Development server settings
-   *
-   * @see {@link https://bud.js.org/reference/bud.setUrl}
-   * @see {@link https://bud.js.org/reference/bud.setProxyUrl}
-   * @see {@link https://bud.js.org/reference/bud.watch}
-   */
   app
     .setUrl('http://localhost:3000')
     .setProxyUrl('http://cleanstart.test')
     .watch(['resources/views', 'app']);
 
-  /**
-   * Generate WordPress `theme.json`
-   *
-   * @note This overwrites `theme.json` on every build.
-   *
-   * @see {@link https://bud.js.org/extensions/sage/theme.json}
-   * @see {@link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json}
-   */
+  // pull Tailwind breakpoints (fall back to common defaults if not present)
+  const screens =
+    app.tailwind.resolveThemeValue('screens') ?? {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    };
+
   app.wpjson
     .setSettings({
+      // this is the magic switch that enables padding/margin/typography controls
+      appearanceTools: true,
+
       background: {
         backgroundImage: true,
       },
+
       color: {
         custom: false,
         customDuotone: false,
@@ -59,19 +43,33 @@ export default async (app) => {
         defaultPalette: false,
         duotone: [],
       },
+
+      // keep your existing custom buckets and add breakpoints mapped to Tailwind
       custom: {
         spacing: {},
         typography: {
           'font-size': {},
           'line-height': {},
         },
+        breakpoints: {
+          mobile: '0px',
+          tablet: screens.md,   // maps Gutenberg "tablet" to Tailwind md
+          desktop: screens.lg,  // maps Gutenberg "desktop" to Tailwind lg
+          xl: screens.xl,
+        },
       },
+
+      // enable the UI controls Gutenberg needs for responsive spacing
       spacing: {
-        padding: true,
+        customPadding: true,
+        customMargin: true,
         units: ['px', '%', 'em', 'rem', 'vw', 'vh'],
       },
+
+      // enable responsive font-size controls
       typography: {
-        customFontSize: false,
+        customFontSize: true,
+        fluid: true,
       },
     })
     .useTailwindColors('extend')

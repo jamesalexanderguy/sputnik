@@ -70,6 +70,11 @@ figure a {
   list-style-type: square;
 }
 
+body {
+  max-width: 2000px !important;
+  margin: 0 auto !important;
+}
+
 h1.has-background,
 h2.has-background {
   display: inline;
@@ -155,6 +160,10 @@ h2.has-background {
   visibility: hidden !important;
 }
 
+.featurelist {
+  max-width: 400px;
+}
+
 /* mailchimp form block styles */
 
 .mc-form {
@@ -220,4 +229,22 @@ h2.has-background {
 .wpcf7-form p {
   margin-bottom: 0;
   margin-top: 0;
+}
+
+/* Mobile overrides */
+@media (max-width: 768px) {
+  .wp-block-cover,
+  .padmob {
+    padding: 8% !important;
+  }
+  .ast-provider .wp-block-column {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .nomobile {
+    display: none !important;
+  }
+  .fullscreen-cover h1 {
+    line-height: 1.9 !important;
+  }
 }

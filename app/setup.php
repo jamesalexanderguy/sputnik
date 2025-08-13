@@ -100,7 +100,7 @@ function sputnik_get_posts($request) {
 
     $args = [
         'post_type'      => 'post',
-        'posts_per_page' => 6,
+        'posts_per_page' => -1,
         'paged'          => $page ?: 1,
         's'              => $search ?: '',
     ];
@@ -147,7 +147,9 @@ function sputnik_get_courses($request) {
 
     $args = [
         'post_type'      => 'course',
-        'posts_per_page' => 6,
+        'posts_per_page' => -1,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
         'paged'          => $page ?: 1,
         's'              => $search ?: '',
     ];
@@ -299,3 +301,37 @@ add_action('init', function () {
         );
     }
 }, 20);
+
+/**
+ * WooCommerce tweaks — excerpt + low stock notice.
+ */
+add_action('after_setup_theme', function () {
+    remove_action(
+        'woocommerce_before_shop_loop_item',
+        'woocommerce_template_loop_product_link_open',
+        10
+    );
+
+    remove_action(
+        'woocommerce_after_shop_loop_item',
+        'woocommerce_template_loop_product_link_close',
+        5
+    );
+
+    add_action('woocommerce_after_shop_loop_item', function () {
+        global $product;
+        if ($product instanceof \WC_Product) {
+            echo '<span class="description">' . wp_kses_post($product->get_short_description()) . '</span>';
+        }
+    }, 5);
+
+    add_action('woocommerce_after_shop_loop_item', function () {
+        global $product;
+        if ($product instanceof \WC_Product && $product->managing_stock()) {
+            $qty = (int) $product->get_stock_quantity();
+            if ($qty > 0 && $qty < 5) {
+                echo '<div class="remaining">Only ' . esc_html($qty) . ' spots remaining!</div>';
+            }
+        }
+    }, 10);
+});

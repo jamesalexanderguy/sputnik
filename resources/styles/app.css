@@ -7,6 +7,66 @@
 }
 
 /*
+Menu
+----------------------------- */
+/* Column backgrounds */
+[x-data="menuAccordion()"] > div:nth-child(1) {
+  @apply bg-white border border-white;
+}
+[x-data="menuAccordion()"] > div:nth-child(2) {
+  @apply bg-babybluelight-transp border border-white;
+}
+[x-data="menuAccordion()"] > div:nth-child(3) {
+  @apply bg-babybluelight text-darkroyal border border-white;
+}
+[x-data="menuAccordion()"] > div:nth-child(4) {
+  @apply bg-darkroyal text-white border border-white;
+}
+
+/* Remove double borders between columns */
+[x-data="menuAccordion()"] > div + div {
+  border-left-width: 0;
+}
+
+/* Submenu link hover — left border highlight */
+[x-data="menuAccordion()"] li a {
+  @apply block pl-3 border-l-0 border-transparent transition-all duration-150;
+}
+
+[x-data="menuAccordion()"] li a:hover {
+  @apply pl-3 border-l-2 border-white;
+}
+
+/* Base styles for all submenu links */
+[x-data="menuAccordion()"] li a {
+  @apply block pl-3 border-l-0 border-transparent transition-all duration-150;
+}
+
+/* White background columns — darkroyal hover border */
+[x-data="menuAccordion()"] > div:nth-child(1) li a:hover,
+[x-data="menuAccordion()"] > div:nth-child(2) li a:hover,
+[x-data="menuAccordion()"] > div:nth-child(3) li a:hover {
+  @apply pl-3 border-l-2 border-darkroyal text-darkroyal;
+}
+
+[x-data="menuAccordion()"] > div:nth-child(3) li a {
+  @apply text-darkroyal 
+}
+
+/* Darkroyal background column — white hover border, text stays white */
+[x-data="menuAccordion()"] > div:nth-child(4) li a:hover {
+  @apply pl-3 border-l-2 border-white text-white;
+}
+
+/*
+Socialz
+----------------------------- */
+.socialz svg {
+  margin-right: 1rem;
+  float: left;
+}
+
+/*
 Woocommerce
 ----------------------------- */
 
@@ -45,8 +105,8 @@ body .woocommerce ul.products li.product .woocommerce-loop-category__title, body
   font-size: 1em;
 }
 
-button:not(.hamburger):hover, .button:not(.hamburger):hover {
-background-color: #af091b!important;
+li.product button:not(.hamburger):hover, li.product .button:not(.hamburger):hover {
+  background-color: #af091b!important;
 } 
 
 body .woocommerce #respond input#submit, body .woocommerce a.button, body .woocommerce button.button, body .woocommerce input.button, .redbutton, li.outofstock span.button.product_type_simple {

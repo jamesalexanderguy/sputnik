@@ -6,7 +6,7 @@
 <div 
   x-data="contentLoop('/wp-json/sputnik/v1/courses', '/wp-json/wp/v2/course_category')" 
   x-init="init()" 
-  class="container mx-auto max-w-[1000px] px-4 py-12"
+  class="container mx-auto py-12 padmob" style="padding-left: var(--wp--preset--spacing--80); padding-right: var(--wp--preset--spacing--80);"
 >
 
 @php(the_content())
@@ -61,15 +61,6 @@
 
   <div x-show="!loading && posts.length === 0" class="text-center text-gray-500 py-8">
     No posts found.
-  </div>
-
-  <div class="text-center mt-8" x-show="hasMore && !loading">
-    <button 
-      @click="loadMore" 
-      class="px-5 py-2 bg-darkroyal text-white rounded-md transition"
-    >
-      Load more
-    </button>
   </div>
 
   <div x-show="loading" class="text-center py-4 text-gray-500">Loading…</div>
