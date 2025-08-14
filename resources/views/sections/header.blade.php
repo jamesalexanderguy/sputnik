@@ -6,7 +6,7 @@
       </a>
       <button
         @click="open = !open"
-        :class="{ 'open': open } bg-darkroyal/40 rounded-md"
+        :class="{ 'open': open }"
         class="relative w-10 h-10 z-50 focus:outline-none group mb-3 mr-8 hamburger"
         ><span
           class="block absolute h-0.5 pt-[2px] border-t-3 border-darkroyal w-10 bg-white transform transition duration-300 ease-in-out origin-center"
