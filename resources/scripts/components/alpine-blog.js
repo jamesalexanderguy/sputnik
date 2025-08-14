@@ -1,80 +1,84 @@
 document.addEventListener('alpine:init', () => {
-  Alpine.data('contentLoop', (apiEndpoint, taxonomyEndpoint) => contentLoop(apiEndpoint, taxonomyEndpoint));
-});
+  Alpine.data('contentLoop', (apiEndpoint, taxonomyEndpoint) => {
+    return {
+      posts: [],
+      page: 1,
+      loading: false,
+      search: '',
+      categories: [],
+      activeCategories: [],
 
-function contentLoop(apiEndpoint, taxonomyEndpoint) {
-  return {
-    posts: [],
-    page: 1,
-    hasMore: true,
-    loading: false,
-    search: '',
-    categories: [],
-    activeCategories: [],
+      init() {
+        this.fetchCategories();
+        this.fetchPosts();
+      },
 
-    init() {
-      this.fetchCategories();
-      this.fetchPosts();
-    },
-    
-    fetchCategories() {
-      fetch(taxonomyEndpoint)
-        .then(res => res.json())
-        .then(data => {
-          if (Array.isArray(data)) {
-            this.categories = data;
-          }
-        })
-        .catch(() => {
+      async fetchCategories() {
+        if (!taxonomyEndpoint) return;
+        try {
+          const res = await fetch(taxonomyEndpoint);
+          const data = await res.json();
+          this.categories = Array.isArray(data) ? data : [];
+        } catch (err) {
+          console.error('Error in fetchCategories:', err);
+          console.trace();
           this.categories = [];
-        });
-    },
+        }
+      },
 
-    fetchPosts(reset = true) {
-      if (reset) {
-        this.page = 1;
-        this.posts = [];
-        this.hasMore = true;
-      }
+      async fetchPosts(reset = true) {
+        if (!apiEndpoint) return;
 
-      this.loading = true;
+        if (reset) {
+          this.page = 1;
+          this.posts = [];
+        }
 
-      const params = new URLSearchParams({
-        page: this.page,
-        search: this.search,
-      });
+        this.loading = true;
 
-      if (this.activeCategories.length > 0) {
-        params.append('categories', this.activeCategories.join(','));
-      }
+        try {
+          const params = new URLSearchParams({
+            page: this.page,
+            search: this.search,
+          });
 
-      fetch(`${apiEndpoint}?${params.toString()}`)
-        .then(res => {
-          if (!res.ok) this.hasMore = false;
-          return res.json();
-        })
-        .then(data => {
-          if (data.length === 0) this.hasMore = false;
-          this.posts = [...this.posts, ...data];
-        })
-        .finally(() => {
+          if (this.activeCategories.length > 0) {
+            params.append('categories', this.activeCategories.join(','));
+          }
+
+          const res = await fetch(`${apiEndpoint}?${params.toString()}`);
+          const data = await res.json();
+
+          if (Array.isArray(data)) {
+            // remove duplicates by id
+            const uniquePosts = [];
+            const ids = new Set();
+            data.forEach(p => {
+              if (!ids.has(p.id)) {
+                ids.add(p.id);
+                uniquePosts.push(p);
+              }
+            });
+            this.posts = uniquePosts;
+          } else {
+            this.posts = [];
+          }
+        } catch (err) {
+          console.error('Error in fetchPosts:', err);
+          this.posts = [];
+        } finally {
           this.loading = false;
-        });
-    },
+        }
+      },
 
-    toggleCategory(catId) {
-      if (this.activeCategories.includes(catId)) {
-        this.activeCategories = this.activeCategories.filter(id => id !== catId);
-      } else {
-        this.activeCategories.push(catId);
-      }
-      this.fetchPosts(true);
-    },
-
-    loadMore() {
-      if (!this.hasMore) return;
-      this.page += 1;
-      this.fetchPosts(false);
-    },
-  }
-}
+      toggleCategory(catId) {
+        if (this.activeCategories.includes(catId)) {
+          this.activeCategories = this.activeCategories.filter(id => id !== catId);
+        } else {
+          this.activeCategories.push(catId);
+        }
+        this.fetchPosts(true);
+      },
+    };
+  });
+});

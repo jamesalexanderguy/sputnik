@@ -15,6 +15,7 @@ export default async (app) => {
     .setUrl('http://localhost:3000')
     .setProxyUrl('http://cleanstart.test')
     .watch(['resources/views', 'app']);
+    
 
   // pull Tailwind breakpoints (fall back to common defaults if not present)
   const screens =
